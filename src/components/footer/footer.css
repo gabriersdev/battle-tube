@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer * {
+  font-weight: 600;
+}
+
+.footer-left{
+  text-align: left;
+}
+
+.footer-right{
+  text-align: right;
+}

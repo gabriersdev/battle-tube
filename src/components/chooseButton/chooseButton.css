@@ -2,11 +2,12 @@
   background-color: #6D28D9;
   color: #C6ADFF;
   border: none;
-  padding: 15px 30px;
+  padding: 16px 30px;
+  width: 100%;
   margin-top: 1rem;
   cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .choose-button:hover {

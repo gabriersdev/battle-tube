@@ -6,8 +6,8 @@ import './container.css'
 const Container = () => {
   return (
     <div className="container">
-      <h1 className={"none"}>ESCOLHA SEU CLIPE</h1>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+      <h1 className={"none"}>ESCOLHA UM CLIPE</h1>
+      <div className={"container-clips"}>
         <ClipContainer/>
         <ClipContainer/>
       </div>

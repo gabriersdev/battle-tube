@@ -1,3 +1,22 @@
 .container {
-  width: 800px;
+  width: 80vw;
+
+  /*@media (min-width: 576px) {*/
+  /*  width: 90vw;*/
+  /*}*/
+
+  /*@media (min-width: 768px) {*/
+  /*  width: 90vw;*/
+  /*}*/
+
+  /*@media (min-width: 1024px) {*/
+  /*  width: 70vw;*/
+  /*}*/
+}
+
+.container-clips {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }

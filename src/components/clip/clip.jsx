@@ -1,18 +1,18 @@
-import './clip.css';
 import PropTypes from "prop-types";
+import './clip.css';
+import ChooseButton from "../chooseButton/chooseButton";
 
 const Clip = ({data}) => {
   return (
     <div className="clip-info">
-      <div className="clip-title">
-        <h2>TITULO DO CLIPE</h2>
-        <span>PODE TER 2 LINHAS</span>
-      </div>
-      <div className="clip">
-        {/*<iframe src="#" title="Clip" />*/}
-        <img src="#" alt="Thumb of the clip"/>
-      </div>
+      <h2 className="clip-title">TITULO DO CLIPE <br/> PODE TER 2 LINHAS</h2>
       <div className="clip-username">USERNAME</div>
+      <div>
+        <div className="clip">
+          {/*<iframe src="#" title="Clip" />*/}
+        </div>
+        <ChooseButton/>
+      </div>
     </div>
   )
 }
