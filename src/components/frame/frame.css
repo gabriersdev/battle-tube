@@ -1,0 +1,173 @@
+.frame {
+  background-color: #200a42;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.frame .div {
+  background-color: #200a42;
+  height: 800px;
+  position: relative;
+  width: 1400px;
+}
+
+.frame .div-2 {
+  align-items: center;
+  display: inline-flex;
+  gap: 32px;
+  left: 84px;
+  position: absolute;
+  top: 80px;
+}
+
+.frame .div-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  position: relative;
+  width: 600px;
+}
+
+.frame .div-4 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .t-tulo-do-clipe-pode {
+  color: #f6f6f6;
+  font-family: "Chakra Petch-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.frame .username {
+  color: #c6adff;
+  font-family: "Chakra Petch-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.frame .div-5 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.frame .rectangle {
+  align-self: stretch;
+  background-color: #000000;
+  border: 1px solid;
+  border-color: #6d28d9;
+  height: 350px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .div-wrapper {
+  align-items: center;
+  background-color: #6d28d9;
+  display: flex;
+  gap: 10px;
+  height: 80px;
+  justify-content: center;
+  padding: 20px 204px;
+  position: relative;
+  width: 600px;
+}
+
+.frame .text-wrapper {
+  color: #c6adff;
+  font-family: "Chakra Petch-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.frame .p {
+  color: transparent;
+  font-family: "Chakra Petch-Bold", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 1197px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 725px;
+}
+
+.frame .span {
+  color: #c6adff;
+}
+
+.frame .text-wrapper-2 {
+  color: #6d28d9;
+}
+
+.frame .username-2 {
+  color: #c6adff;
+  font-family: "Chakra Petch-Bold", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 1256px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 31px;
+}
+
+.frame .div-6 {
+  align-items: center;
+  display: inline-flex;
+  gap: 4px;
+  left: 84px;
+  position: absolute;
+  top: 747px;
+}
+
+.frame .username-3 {
+  color: #c6adff;
+  font-family: "Chakra Petch-Bold", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.frame .arrow-outward {
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
