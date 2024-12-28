@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className={"footer-left"}>
-        <button onClick={handlerExport} style={{color: '#C6ADFF', display: 'inline-flex', alignItems: 'center', flexDirection: 'row-reverse', gap: '0.125rem'}}>
+        <button onClick={handlerExport} className={"footer-btn-export"}>
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#C6ADFF" style={{padding: 0, margin: 0}}>
               <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
@@ -27,7 +27,7 @@ const Footer = () => {
           <span>EXPORTAR</span>
         </button>
       </div>
-      <div className={" footer-right"}>
+      <div className={"footer-right"}>
         <div>
           <p>RODADA {formatNumber(roundPage)}/{formatNumber(totalRoundPages)} </p>
         </div>

@@ -9,10 +9,26 @@
   font-weight: 600;
 }
 
-.footer-left{
+.footer-left {
   text-align: left;
 }
 
-.footer-right{
+.footer-right {
   text-align: right;
+}
+
+.footer-btn-export {
+  color: #C6ADFF;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 0.125rem;
+
+  &:hover {
+    color: #F6F6F6;
+
+    svg {
+      fill: #F6F6F6;
+    }
+  }
 }

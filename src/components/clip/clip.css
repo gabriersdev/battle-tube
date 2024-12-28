@@ -1,5 +1,9 @@
 .clip-info { /* Container para título e username */
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .clip-title {
@@ -21,5 +25,5 @@
   background-color: #000000;
   border: 1px solid #6D28D9;
   width: 100%;
-  padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
+  height: 480px;
 }

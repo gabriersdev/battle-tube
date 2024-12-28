@@ -8,8 +8,9 @@
   cursor: pointer;
   font-size: 24px;
   font-weight: 700;
-}
 
-.choose-button:hover {
-  background-color: #8a3ffc;
+  &:hover,
+  &:focus{
+    background-color: #8a3ffc;
+  }
 }

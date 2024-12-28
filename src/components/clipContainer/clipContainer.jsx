@@ -5,7 +5,7 @@ import './clipContainer.css'
 const ClipContainer = () => {
   return (
     <div className="clip-container">
-      <Clip data={{title: 'XXXXX', username: 'XXXX', url: '#'}}/>
+      <Clip data={{title: 'XXXXX', username: 'XXXX', id: '#'}}/>
     </div>
   )
 }

@@ -18,10 +18,10 @@ body * {
 
 .app {
   margin: 5rem 0;
-  width: 80vw;
+  width: 90vw;
 
-  @media screen and (max-width: 768px) {
-    width: 90vw;
+  @media screen and (max-width: 2155px) {
+    width: 95vw;
   }
 }
 
