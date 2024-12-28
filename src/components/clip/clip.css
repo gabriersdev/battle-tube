@@ -12,6 +12,15 @@
   font-weight: 700;
   line-height: 1.25;
   font-size: 24px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  text-align: center;
+  width: 100%;
+  max-width: 540px;
+  /* TODO - o max-width deve corresponder ao tamanhao do iframe do clip para ficar centralizado*/
+  line-clamp: 2;
 }
 
 .clip-username {
