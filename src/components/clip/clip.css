@@ -5,6 +5,8 @@
 .clip-title {
   color: #F6F6F6;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.25;
   font-size: 24px;
 }
 

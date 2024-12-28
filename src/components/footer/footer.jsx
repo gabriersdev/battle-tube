@@ -24,7 +24,7 @@ const Footer = () => {
               <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
             </svg>
           </span>
-          <span style={{paddingBottom: '0.25rem'}}>EXPORTAR</span>
+          <span>EXPORTAR</span>
         </button>
       </div>
       <div className={" footer-right"}>
