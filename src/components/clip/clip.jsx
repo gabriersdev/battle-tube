@@ -4,7 +4,7 @@ import './clip.css';
 import {useRef, useState} from "react";
 
 const Clip = ({data}) => {
-  // use ref (Useref) para manipular o iframe
+  // use ref para manipular o iframe
   const iframe = useRef(null);
   const title = useRef(null)
   const [maxWidth, setMaxWidth] = useState('initial');

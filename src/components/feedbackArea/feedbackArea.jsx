@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import './feedbackArea.css';
 
 const FeedbackArea = ({message}) => {
   return (
-    <div>{message}</div>
+    <div className={'feedback-area message'}>{message}</div>
   )
 }
 

@@ -30,6 +30,7 @@ function shuffle(array) {
 // Separate items in groups of 2
 const separateItems = (items) => {
   const groups = []
+
   for (let i of items) {
     let index = items.indexOf(i)
 
@@ -65,5 +66,24 @@ const separateMoreGroups = (groups) => {
 }
 
 const suffleItems = shuffle(items)
-let groups = separateItems(suffleItems)
+const groups = separateItems(suffleItems)
 
+let groupsShow = groups
+let selected = []
+
+while(groupsShow.length > 0) {
+  groupsShow[0][0].selected = true
+  selected.push(groupsShow[0][0])
+
+  // Remove the first group
+  groupsShow.shift()
+
+  // Separate more groups
+  if (groupsShow.length === 0 && selected.length >= 2) {
+    groupsShow = separateItems(selected)
+    console.log('NOVA RODADA')
+    selected = []
+  }
+}
+
+console.log(`O selecionado foi ${selected.map(item => item.name)}`)

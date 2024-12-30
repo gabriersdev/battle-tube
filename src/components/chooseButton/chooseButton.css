@@ -11,6 +11,12 @@
 
   &:hover,
   &:focus{
-    background-color: #8a3ffc;
+    background-color: #8A3FFC;
+  }
+
+  &:disabled {
+    background-color: #6D28D9;
+    color: #C6ADFF;
+    cursor: not-allowed;
   }
 }

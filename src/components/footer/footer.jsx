@@ -9,6 +9,18 @@ const Footer = () => {
 
   const handlerExport = () => {
     console.log('Exportar')
+    // Tem que pegar um dado do estado, criar um arquivo e fazer o download
+    // O arquivo pode ser um arquivo JSON
+    const data = {1: 'a', 2: 'b', 3: 'c'}
+    const json = JSON.stringify(data)
+    const blob = new Blob([json], {type: 'application/json'})
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'data.json'
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
   }
 
   const formatNumber = (number) => {
