@@ -3,7 +3,7 @@ import ChooseButton from "../chooseButton/chooseButton";
 import './clip.css';
 import {useRef, useState} from "react";
 
-const Clip = ({data}) => {
+const Clip = ({data, index, handleSelection}) => {
   // use ref para manipular o iframe
   const iframe = useRef(null);
   const title = useRef(null)
@@ -22,16 +22,16 @@ const Clip = ({data}) => {
 
   return (
     <div className="clip-info">
-      <h2 className="clip-title" ref={title} style={{maxWidth: maxWidth}} title={'Título do Clipe'}>TITULO DO CLIPE</h2>
-      <div className="clip-username">USERNAME</div>
+      <h2 className="clip-title" ref={title} style={{maxWidth: maxWidth}} title={data.title}>{data.title}</h2>
+      <div className="clip-username">{data.username}</div>
       <div>
         <iframe
           ref={iframe}
           className={'clip'}
-          src="https://clips.twitch.tv/embed?clip=CoweringColdBaconPipeHype-m6MOE2Woe70ddxw9&parent=localhost"
+          src={`https://clips.twitch.tv/embed?clip=${data.id}&parent=localhost`}
           allowFullScreen>
         </iframe>
-        <ChooseButton/>
+        <ChooseButton index={index} handleSelection={handleSelection}/>
       </div>
     </div>
   )
@@ -42,7 +42,9 @@ Clip.propTypes = {
     title: PropTypes.string,
     username: PropTypes.string,
     id: PropTypes.string,
-  })
+  }),
+  index: PropTypes.number.isRequired,
+  handleSelection: PropTypes.func.isRequired
 }
 
 export default Clip;

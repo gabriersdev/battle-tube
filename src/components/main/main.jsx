@@ -1,7 +1,7 @@
 import Selection from "../selection/selection";
-import './container.css'
+import './main.css'
 
-const Container = () => {
+const Main = () => {
   return (
     <main className="container-main">
       <h1 className={"none"}>ESCOLHA UM CLIPE</h1>
@@ -12,4 +12,4 @@ const Container = () => {
   )
 }
 
-export default Container
+export default Main

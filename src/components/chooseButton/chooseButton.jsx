@@ -1,13 +1,14 @@
-import './chooseButton.css';
 import {useState} from "react";
+import PropTypes from "prop-types";
+import './chooseButton.css';
 
-const ChooseButton = () => {
+const ChooseButton = ({index, handleSelection}) => {
   const [selected, setSelected] = useState(false);
   const [disabled, setDisabled] = useState(false);
 
   const handleClick = (e) => {
     e.preventDefault()
-    console.log('You clicked the button!')
+    handleSelection(index)
     setSelected(true)
     setDisabled(true)
 
@@ -15,14 +16,19 @@ const ChooseButton = () => {
     setTimeout(() => {
       setSelected(false)
       setDisabled(false)
-    }, 2000)
+    }, 1000)
   }
 
   return (
     <button type={"button"} className="choose-button" disabled={disabled} onClick={handleClick}>
-      {selected ? 'AGUARDE...' : 'ESCOLHER ESTE'}
+      {selected ? 'ESCOLHIDO!' : 'ESCOLHER ESTE'}
     </button>
   );
+}
+
+ChooseButton.propTypes = {
+  index: PropTypes.number.isRequired,
+  handleSelection: PropTypes.func.isRequired
 }
 
 export default ChooseButton;

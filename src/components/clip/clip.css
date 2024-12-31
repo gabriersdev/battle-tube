@@ -19,7 +19,6 @@
   text-align: center;
   width: 100%;
   max-width: 540px;
-  /* TODO - o max-width deve corresponder ao tamanhao do iframe do clip para ficar centralizado*/
   line-clamp: 2;
 }
 
@@ -27,6 +26,10 @@
   color: #C6ADFF;
   font-weight: 700;
   font-size: 20px;
+}
+
+.clip-title, .clip-username {
+  text-transform: uppercase;
 }
 
 .clip {
