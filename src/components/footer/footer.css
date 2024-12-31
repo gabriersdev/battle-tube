@@ -23,12 +23,4 @@
   align-items: center;
   flex-direction: row-reverse;
   gap: 0.125rem;
-
-  &:hover {
-    color: #F6F6F6;
-
-    svg {
-      fill: #F6F6F6;
-    }
-  }
 }
