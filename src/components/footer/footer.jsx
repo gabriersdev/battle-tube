@@ -1,18 +1,11 @@
-import {useState} from "react";
+import PropTypes from "prop-types";
 import './footer.css'
 
-const Footer = () => {
-  const [roundPage, setRoundPage] = useState(1)
-  const [totalRoundPages, setTotalRoundPages] = useState(6)
-  const [selectionPage, setSelectionPage] = useState(1)
-  const [totalSelectionPages, setTotalSelectionPages] = useState(63)
+const Footer = ({variables}) => {
+  const [roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport] = variables
 
   const handlerExport = () => {
-    console.log('Exportar')
-    // Tem que pegar um dado do estado, criar um arquivo e fazer o download
-    // O arquivo pode ser um arquivo JSON
-    const data = {1: 'a', 2: 'b', 3: 'c'}
-    const json = JSON.stringify(data)
+    const json = JSON.stringify(dataExport)
     const blob = new Blob([json], {type: 'application/json'})
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
@@ -49,6 +42,10 @@ const Footer = () => {
       </div>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  variables: PropTypes.array.isRequired
 }
 
 export default Footer

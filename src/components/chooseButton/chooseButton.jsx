@@ -16,7 +16,7 @@ const ChooseButton = ({index, handleSelection}) => {
     setTimeout(() => {
       setSelected(false)
       setDisabled(false)
-    }, 1000)
+    }, 100)
   }
 
   return (

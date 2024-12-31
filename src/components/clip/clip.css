@@ -19,7 +19,11 @@
   text-align: center;
   width: 100%;
   max-width: 540px;
-  line-clamp: 2;
+  line-clamp: 1;
+
+  @media screen and (max-width: 768px) {
+    line-clamp: 2;
+  }
 }
 
 .clip-username {
@@ -38,4 +42,8 @@
   border: 1px solid #6D28D9;
   width: 100%;
   height: 480px;
+
+  @media screen and (max-width: 590px) {
+    height: 300px;
+  }
 }

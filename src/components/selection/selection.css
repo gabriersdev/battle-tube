@@ -30,6 +30,7 @@
   }
 
   @media screen and (max-width: 768px) {
+    margin-top: 0.5rem;
     scale: 1;
     width: 5rem;
     height: 4rem;
