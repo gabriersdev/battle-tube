@@ -21,7 +21,7 @@
 </style>
 
 <div class="container my-5">
-  <h1 class="text-center fs-3 fw-semibold mb-5">Visualizar Clipes</h1>
+  <h1 class="text-center fs-3 fw-semibold mb-5 text-white">Visualização de Clipes</h1>
   <div id="app"></div>
 </div>
 
@@ -34,8 +34,8 @@
       app.innerHTML += `
         <div class="card mb-3">
           <div class="card-body d-flex align-items-center flex-wrap gap-3 justify-content-between">
-            <a href="${clip.url}" target="_blank" rel="noreferrer noopener" class="text-body" style="text-decoration: none">
-              <span class="card-title mb-0 d-block">${clip.title}</span>
+            <a href="${clip.url}" target="_blank" rel="noreferrer noopener" style="text-decoration: none">
+              <span class="card-title mb-0 d-block text-white">${clip.title}</span>
               <span class="card-title mb-0 d-block text-muted">${clip.creator_name}</span>
             </a>
             <a href="${clip.url}" target="_blank" class="btn btn-primary">Assistir</a>
@@ -45,19 +45,19 @@
     })
 
     if (clips.length === 0) {
-      app.innerHTML += `
+      app.innerHTML = `
         <div class="alert alert-info text-center">Nenhum clipe encontrado.</div>
       `
     } else {
       app.innerHTML += `
         <div class="text-center">
-          <button class="btn btn-secondary" onclick="openAllClips()">Abrir 15 por vez dos ${clips.length} clipes</button>
+          <button class="btn btn-secondary" onclick="open15Clips()">Abrir 15 por vez dos ${clips.length} clipes</button>
         </div>
       `
     }
   });
 
-  function openAllClips() {
+  function open15Clips() {
     clips.then(({default: clips}) => {
       if (clips.length === 0) {
         alert('Todos os clipes já foram abertos.');
@@ -72,7 +72,7 @@
     });
   }
 
-  window.openAllClips = openAllClips;
+  window.open15Clips = open15Clips;
 </script>
 </body>
 </html>
