@@ -1,11 +1,10 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import PropTypes from "prop-types";
 import ChooseButton from "../chooseButton/chooseButton";
 import IframeClip from "../iframeClip/iframeClip";
+import {AnimatePresence, motion} from "framer-motion";
 import './chosenClip.css';
 import '../clip/clip.css';
-import {AnimatePresence, motion} from "framer-motion";
-import ClipContainer from "../clipContainer/clipContainer";
 
 const ChosenClip = ({data}) => {
   useEffect(() => {

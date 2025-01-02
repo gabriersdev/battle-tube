@@ -1,9 +1,8 @@
-import {useState} from "react";
 import PropTypes from "prop-types";
 import './chooseButton.css';
 
 const ChooseButton = ({index, handleSelection, restart}) => {
-  const [disabled, setDisabled] = useState(false);
+  const disabled = false
 
   const handleClick = (e) => {
     e.preventDefault()

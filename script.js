@@ -87,3 +87,4 @@ while(groupsShow.length > 0) {
 }
 
 console.log(`O selecionado foi ${selected.map(item => item.name)}`)
+console.log(separateMoreGroups(groupsShow))

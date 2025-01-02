@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
-import {motion, AnimatePresence} from "framer-motion";
 import PropTypes from "prop-types";
+import {motion, AnimatePresence} from "framer-motion";
 import ClipContainer from "../clipContainer/clipContainer";
 import ChosenClip from "../chosenClip/chosenClip";
-import './selection.css'
-
 import initialClips from "../../data/clips";
+import './selection.css'
 
 const Selection = ({functions}) => {
   const {setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport} = functions;
@@ -20,7 +19,7 @@ const Selection = ({functions}) => {
     setTotalRoundPages(Math.log2(initialClips.length));
     setSelectionPage(currentPairIndex + 1);
     setTotalSelectionPages(clips.length / 2);
-  }, [winners])
+  }, [round, currentPairIndex, clips, setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages]);
 
   const handleSelection = (winnerIndex) => {
     // Adicionar o vencedor ao array de vencedores
