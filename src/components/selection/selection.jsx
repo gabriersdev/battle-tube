@@ -40,18 +40,15 @@ const Selection = ({functions}) => {
     }
   };
 
-  if (true) {
-    return (
-      <section className={'selection'}>
-        <ChosenClip data={{title: 'Oi', id: 'AgileModernLapwingNotLikeThis-MIv9BnOpdhKjdM4b', username: 'gabriel'}}/>
-      </section>
-    )
-  }
-
   // Verificar se restou apenas um clipe
   if (clips.length === 1) {
-    alert(`O melhor clipe é: ${JSON.stringify(clips[0])}`)
-    return null;
+    const clipData = {...clips[0], username: clips[0].creator_name};
+    return (
+      // Se for o caso, exibir o clipe escolhido
+      <section className={'selection'}>
+        <ChosenClip data={clipData} />
+      </section>
+    )
   }
 
   // Obter os dois clipes do par atual
