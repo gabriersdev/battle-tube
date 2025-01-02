@@ -1,8 +1,15 @@
 import PropTypes from "prop-types";
 import './chooseButton.css';
+import {useEffect} from "react";
 
-const ChooseButton = ({index, handleSelection, restart}) => {
+const ChooseButton = ({index, handleSelection, restart, click}) => {
   const disabled = false
+
+  useEffect(() => {
+    if (click) {
+      handleSelection(index)
+    }
+  }, [click, handleSelection, index]);
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -32,7 +39,10 @@ const ChooseButton = ({index, handleSelection, restart}) => {
 }
 
 ChooseButton.propTypes = {
-  index: PropTypes.number.isRequired, handleSelection: PropTypes.func.isRequired, restart: PropTypes.bool
+  index: PropTypes.number.isRequired,
+  handleSelection: PropTypes.func.isRequired,
+  restart: PropTypes.bool,
+  click: PropTypes.bool
 }
 
 export default ChooseButton;

@@ -4,7 +4,7 @@ import ChooseButton from "../chooseButton/chooseButton";
 import IframeClip from "../iframeClip/iframeClip";
 import './clip.css';
 
-const Clip = ({data, index, handleSelection}) => {
+const Clip = ({data, index, handleSelection, click}) => {
   // use ref para manipular o iframe
   const iframe = useRef(null);
   const title = useRef(null)
@@ -19,6 +19,7 @@ const Clip = ({data, index, handleSelection}) => {
         if (title) setMaxWidth(`${width}px`);
       }
     })
+
   }, [])
 
   return (
@@ -27,7 +28,7 @@ const Clip = ({data, index, handleSelection}) => {
       <div className="clip-username">{data.username}</div>
       <div>
         <IframeClip refIframe={iframe} className={'clip-iframe'} id={data.id}/>
-        <ChooseButton index={index} handleSelection={handleSelection}/>
+        <ChooseButton index={index} handleSelection={handleSelection} click={click}/>
       </div>
     </div>
   )
@@ -40,7 +41,8 @@ Clip.propTypes = {
     id: PropTypes.string,
   }),
   index: PropTypes.number.isRequired,
-  handleSelection: PropTypes.func.isRequired
+  handleSelection: PropTypes.func.isRequired,
+  click: PropTypes.bool
 }
 
 export default Clip;

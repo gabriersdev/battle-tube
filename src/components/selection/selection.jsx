@@ -88,7 +88,7 @@ const Selection = ({functions}) => {
         initial={{opacity: 0, y: 50}}
         animate={{opacity: 1, y: 0}}
         exit={{opacity: 0, y: -50}}
-        transition={{duration: 0.5, ease: "easeOut"}}
+        transition={{duration: 0.1, ease: "easeOut"}}
         className={'selection'}
       >
         <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
