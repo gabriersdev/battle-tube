@@ -24,6 +24,31 @@ const Selection = ({functions}) => {
       )
     }
 
+    // Obter os dados do localStorage, se existirem
+    if (typeof localStorage !== 'undefined') {
+      const clips = JSON.parse(localStorage.getItem('clips'));
+      const currentPairIndex = JSON.parse(localStorage.getItem('currentPairIndex'));
+      const round = JSON.parse(localStorage.getItem('round'));
+      const winners = JSON.parse(localStorage.getItem('winners'));
+
+      if (clips && currentPairIndex !== null && round !== null && winners) {
+        try {
+          setClips(clips);
+          setCurrentPairIndex(currentPairIndex);
+          setRound(round);
+          setWinners(winners);
+        } catch (e) {
+          localStorage.removeItem('clips');
+          localStorage.removeItem('currentPairIndex');
+          localStorage.removeItem('round');
+          localStorage.removeItem('winners');
+          console.error('Erro ao carregar os dados do localStorage:', e);
+        }
+      }
+    }
+  }, [])
+
+  useEffect(() => {
     // Atualizar os dados do projeto, no footer
     setRoundPage(round);
     setTotalRoundPages(Math.log2(initialClips.length));
@@ -35,6 +60,8 @@ const Selection = ({functions}) => {
     // Adicionar o vencedor ao array de vencedores
     const winner = clips[currentPairIndex * 2 + winnerIndex];
     setWinners((prev) => [...prev, winner]);
+
+    // Atualizar os dados do projeto, para exportação
     pushDataExport({
       SEL: `${currentPairIndex + 1}/${clips.length / 2}`,
       ROD: `${round}/${Math.log2(initialClips.length)}`,
@@ -53,6 +80,14 @@ const Selection = ({functions}) => {
     } else {
       // Avançar para o próximo par
       setCurrentPairIndex(currentPairIndex + 1);
+    }
+
+    // Persistir os dados no localStorage
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('clips', JSON.stringify(clips));
+      localStorage.setItem('currentPairIndex', JSON.stringify(currentPairIndex));
+      localStorage.setItem('round', JSON.stringify(round));
+      localStorage.setItem('winners', JSON.stringify(winners));
     }
   };
 

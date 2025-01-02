@@ -14,6 +14,7 @@ const ChosenClip = ({data}) => {
 
   const handleSelection = () => {
     // Ação para o botão "recomeçar"
+    if (typeof localStorage !== 'undefined') localStorage.clear()
     window.location.reload()
   }
 
