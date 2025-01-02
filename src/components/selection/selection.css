@@ -10,6 +10,12 @@
     flex-direction: column;
     align-items: stretch;
   }
+
+  &.selection-error {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .selection-versus {
@@ -20,8 +26,8 @@
 
 .selection-versus-img {
   text-align: center;
-  width: 5rem;
-  height: 4rem;
+  width: 4rem;
+  height: 3rem;
   scale: 1.5;
 
   @media screen and (max-width: 1830px) {
@@ -35,4 +41,11 @@
     width: 5rem;
     height: 4rem;
   }
+}
+
+.selection-error-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
 }

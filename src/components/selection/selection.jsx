@@ -15,6 +15,16 @@ const Selection = ({functions}) => {
   const [winners, setWinners] = useState([]); // Vencedores da rodada atual
 
   useEffect(() => {
+    if (initialClips === undefined || initialClips.length === 0 || !Array.isArray(initialClips) || initialClips.length % 2 !== 0) {
+      console.error('Erro: A lista de clipes não é válida!', initialClips, typeof initialClips);
+      return (
+        <div className={'selection selection-error'}>
+          <h2 className={'selection-error-title'}>Erro: A lista de clipes não é válida!</h2>
+        </div>
+      )
+    }
+
+    // Atualizar os dados do projeto, no footer
     setRoundPage(round);
     setTotalRoundPages(Math.log2(initialClips.length));
     setSelectionPage(currentPairIndex + 1);
@@ -25,7 +35,13 @@ const Selection = ({functions}) => {
     // Adicionar o vencedor ao array de vencedores
     const winner = clips[currentPairIndex * 2 + winnerIndex];
     setWinners((prev) => [...prev, winner]);
-    pushDataExport(`Seleção: ${currentPairIndex + 1}/${clips.length / 2} - Rodada: ${round}/${Math.log2(initialClips.length)} - ${winner.title} - ${winner.creator_name}`);
+    pushDataExport({
+      SEL: `${currentPairIndex + 1}/${clips.length / 2}`,
+      ROD: `${round}/${Math.log2(initialClips.length)}`,
+      title: winner.title,
+      username: winner.creator_name,
+      id: winner.id,
+    });
 
     // Verificar se foi o último par da rodada
     if (currentPairIndex === Math.floor(clips.length / 2) - 1) {
@@ -66,22 +82,22 @@ const Selection = ({functions}) => {
   }
 
   return (
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentPairIndex}
-          initial={{ opacity: 0, y: 50 }}
-             animate={{ opacity: 1, y: 0 }}
-             exit={{ opacity: 0, y: -50 }}
-             transition={{ duration: 0.5, ease: "easeOut" }}
-          className={'selection'}
-        >
-          <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
-          <div className={'selection-versus'}>
-            <img src={'versus-img.png'} alt={'VS.'} className={'selection-versus-img'}/>
-          </div>
-          <ClipContainer data={getClipData(1)} handleSelection={handleSelection} index={1}/>
-        </motion.div>
-      </AnimatePresence>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={currentPairIndex}
+        initial={{opacity: 0, y: 50}}
+        animate={{opacity: 1, y: 0}}
+        exit={{opacity: 0, y: -50}}
+        transition={{duration: 0.5, ease: "easeOut"}}
+        className={'selection'}
+      >
+        <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
+        <div className={'selection-versus'}>
+          <img src={'versus-img.png'} alt={'VS.'} className={'selection-versus-img'}/>
+        </div>
+        <ClipContainer data={getClipData(1)} handleSelection={handleSelection} index={1}/>
+      </motion.div>
+    </AnimatePresence>
   )
 }
 
