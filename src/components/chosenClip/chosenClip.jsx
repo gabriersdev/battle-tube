@@ -41,7 +41,7 @@ const ChosenClip = ({data}) => {
           <ChooseButton index={0} handleSelection={handleSelection} restart={true}/>
         </div>
         <div className={'chosen-clip-video'}>
-          <IframeClip className={'clip chosen'} id={data.id}/>
+          <IframeClip className={'clip-iframe chosen'} id={data.id}/>
         </div>
       </motion.div>
     </AnimatePresence>

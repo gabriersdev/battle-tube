@@ -22,11 +22,11 @@ const Clip = ({data, index, handleSelection}) => {
   }, [])
 
   return (
-    <div className="clip-info">
+    <div className="clip">
       <h2 className="clip-title" ref={title} style={{maxWidth: maxWidth}} title={data.title}>{data.title}</h2>
       <div className="clip-username">{data.username}</div>
       <div>
-        <IframeClip refIframe={iframe} className={'clip'} id={data.id}/>
+        <IframeClip refIframe={iframe} className={'clip-iframe'} id={data.id}/>
         <ChooseButton index={index} handleSelection={handleSelection}/>
       </div>
     </div>
