@@ -1,7 +1,8 @@
+import {useRef, useState} from "react";
 import PropTypes from "prop-types";
 import ChooseButton from "../chooseButton/chooseButton";
+import IframeClip from "../iframeClip/iframeClip";
 import './clip.css';
-import {useRef, useState} from "react";
 
 const Clip = ({data, index, handleSelection}) => {
   // use ref para manipular o iframe
@@ -25,12 +26,7 @@ const Clip = ({data, index, handleSelection}) => {
       <h2 className="clip-title" ref={title} style={{maxWidth: maxWidth}} title={data.title}>{data.title}</h2>
       <div className="clip-username">{data.username}</div>
       <div>
-        <iframe
-          ref={iframe}
-          className={'clip'}
-          src={`https://clips.twitch.tv/embed?clip=${data.id}&parent=localhost`}
-          allowFullScreen>
-        </iframe>
+        <IframeClip refIframe={iframe} className={'clip'} id={data.id}/>
         <ChooseButton index={index} handleSelection={handleSelection}/>
       </div>
     </div>

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import './selection.css'
 
 import initialClips from "../../data/clips";
+import ChosenClip from "../chosenClip/chosenClip";
 
 const Selection = ({functions}) => {
   const {setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport} = functions;
@@ -38,6 +39,14 @@ const Selection = ({functions}) => {
       setCurrentPairIndex(currentPairIndex + 1);
     }
   };
+
+  if (true) {
+    return (
+      <section className={'selection'}>
+        <ChosenClip data={{title: 'Oi', id: 'AgileModernLapwingNotLikeThis-MIv9BnOpdhKjdM4b', username: 'gabriel'}}/>
+      </section>
+    )
+  }
 
   // Verificar se restou apenas um clipe
   if (clips.length === 1) {

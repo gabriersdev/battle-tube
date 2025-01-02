@@ -19,4 +19,12 @@
     color: #C6ADFF;
     cursor: not-allowed;
   }
+
+  &.restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }

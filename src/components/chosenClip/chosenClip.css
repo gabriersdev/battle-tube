@@ -1,0 +1,42 @@
+.chosen-clip {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.chosen-clip-content,
+.chosen-clip-video {
+  flex: 1;
+}
+
+.chosen-clip-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.chosen-title{
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.chosen-title,
+.chosen-paragraph{
+  text-transform: uppercase;
+}
+
+.chosen-paragraph {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.chosen-username{
+  color: #C6ADFF;
+}
