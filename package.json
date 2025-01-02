@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "aos": "^2.3.4",
     "prompt-sync": "^4.2.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
