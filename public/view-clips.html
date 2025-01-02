@@ -27,10 +27,13 @@
 
 <script type="module">
   const clips = import('../src/data/clips.js');
+  let clipsShow = []
   clips.then(({default: clips}) => {
-    console.log('Quantidade de items:', clips.length)
+    console.log(clips.length)
     const app = document.getElementById('app');
-    clips.forEach(clip => {
+    clipsShow = Object.assign([], clips);
+    console.log('Quantidade de items:', clipsShow.length)
+    clipsShow.forEach(clip => {
       app.innerHTML += `
         <div class="card mb-3">
           <div class="card-body d-flex align-items-center flex-wrap gap-3 justify-content-between">
@@ -51,24 +54,22 @@
     } else {
       app.innerHTML += `
         <div class="text-center">
-          <button class="btn btn-secondary" onclick="open15Clips()">Abrir 15 por vez dos ${clips.length} clipes</button>
+          <button class="btn btn-secondary" onclick="open15Clips()">Abrir 15 por vez dos ${clipsShow.length} clipes</button>
         </div>
       `
     }
   });
 
   function open15Clips() {
-    clips.then(({default: clips}) => {
-      if (clips.length === 0) {
-        alert('Todos os clipes já foram abertos.');
-        return;
-      }
+    if (clipsShow.length === 0) {
+      alert('Todos os clipes já foram abertos.');
+      return;
+    }
 
-      clips.splice(0, 15).forEach((clip, i) => {
-        setTimeout(() => {
-          window.open(clip.url, '_blank');
-        }, i * 100);
-      });
+    clipsShow.splice(0, 15).forEach((clip, i) => {
+      setTimeout(() => {
+        window.open(clip.url, '_blank');
+      }, 100);
     });
   }
 
