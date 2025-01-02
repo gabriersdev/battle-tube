@@ -1,10 +1,11 @@
 import {useEffect, useState} from "react";
-import ClipContainer from "../clipContainer/clipContainer";
+import {motion, AnimatePresence} from "framer-motion";
 import PropTypes from "prop-types";
+import ClipContainer from "../clipContainer/clipContainer";
+import ChosenClip from "../chosenClip/chosenClip";
 import './selection.css'
 
 import initialClips from "../../data/clips";
-import ChosenClip from "../chosenClip/chosenClip";
 
 const Selection = ({functions}) => {
   const {setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport} = functions;
@@ -46,7 +47,7 @@ const Selection = ({functions}) => {
     return (
       // Se for o caso, exibir o clipe escolhido
       <section className={'selection'}>
-        <ChosenClip data={clipData} />
+        <ChosenClip data={clipData}/>
       </section>
     )
   }
@@ -66,13 +67,22 @@ const Selection = ({functions}) => {
   }
 
   return (
-    <section className={'selection'}>
-      <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
-      <div className={'selection-versus'}>
-        <img src={'versus-img.png'} alt={'VS.'} className={'selection-versus-img'}/>
-      </div>
-      <ClipContainer data={getClipData(1)} handleSelection={handleSelection} index={1}/>
-    </section>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentPairIndex}
+          initial={{ opacity: 0, y: 50 }}
+             animate={{ opacity: 1, y: 0 }}
+             exit={{ opacity: 0, y: -50 }}
+             transition={{ duration: 0.5, ease: "easeOut" }}
+          className={'selection'}
+        >
+          <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
+          <div className={'selection-versus'}>
+            <img src={'versus-img.png'} alt={'VS.'} className={'selection-versus-img'}/>
+          </div>
+          <ClipContainer data={getClipData(1)} handleSelection={handleSelection} index={1}/>
+        </motion.div>
+      </AnimatePresence>
   )
 }
 

@@ -11,11 +11,6 @@
   text-align: center;
   width: 100%;
   max-width: 540px;
-  line-clamp: 1;
-
-  @media screen and (max-width: 768px) {
-    line-clamp: 2;
-  }
 }
 
 .clip-username {
@@ -26,6 +21,13 @@
 
 .clip-title, .clip-username {
   text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
+  @media screen and (max-width: 768px) {
+    -webkit-line-clamp: 2;
+  }
 }
 
 .clip {
