@@ -1,0 +1,16 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.welcome-title {
+  text-wrap: balance;
+}
+
+.welcome-title span {
+  display: block;
+  text-align: center;
+}
