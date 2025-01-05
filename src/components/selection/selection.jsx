@@ -54,6 +54,15 @@ const Selection = ({functions}) => {
     setTotalRoundPages(Math.log2(initialClips.length));
     setSelectionPage(currentPairIndex + 1);
     setTotalSelectionPages(clips.length / 2);
+
+    // TODO - fazer isso de forma mais eficiente
+    const btnClearReload = document.querySelector(['[data-action="clear-and-reload"]'])
+    if (btnClearReload && round === 1 && currentPairIndex === 0) {
+      btnClearReload.style.display = 'none';
+    } else if (btnClearReload) {
+      btnClearReload.style.display = 'flex';
+    }
+
   }, [round, currentPairIndex, clips, setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages]);
 
   const handleSelection = (winnerIndex) => {
@@ -128,7 +137,7 @@ const Selection = ({functions}) => {
       >
         <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
         <div className={'selection-versus'}>
-          <img src={'versus-img.png'} alt={'VS.'} className={'selection-versus-img'}/>
+          <img src={'versus-img.png'} alt={'VS.'} className={'selection-versus-img'} loading={"lazy"}/>
         </div>
         <ClipContainer data={getClipData(1)} handleSelection={handleSelection} index={1}/>
       </motion.div>

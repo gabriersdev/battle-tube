@@ -13,13 +13,19 @@
 
 .footer-left {
   text-align: left;
+  gap: 0.5rem;
 }
 
 .footer-right {
   text-align: right;
-  display: flex;
-  gap: 0.25rem;
   flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-btn-export {
@@ -27,5 +33,5 @@
   display: inline-flex;
   align-items: center;
   flex-direction: row-reverse;
-  gap: 0.125rem;
+  gap: 0.05rem;
 }

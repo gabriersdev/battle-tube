@@ -4,13 +4,17 @@
   justify-content: center;
   align-items: center;
 
-}
+  .welcome-content {
+    width: min(calc(100% - 2rem), 500px);
+  }
 
-.welcome-title {
-  text-wrap: balance;
-}
+  .welcome-title {
+    text-wrap: balance;
+    text-align: center;
+  }
 
-.welcome-title span {
-  display: block;
-  text-align: center;
+  .welcome-title span {
+    display: block;
+    text-align: center;
+  }
 }

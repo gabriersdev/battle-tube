@@ -1,6 +1,5 @@
 import {useEffect} from "react";
 import PropTypes from "prop-types";
-import ChooseButton from "../chooseButton/chooseButton";
 import IframeClip from "../iframeClip/iframeClip";
 import {AnimatePresence, motion} from "framer-motion";
 import './chosenClip.css';
@@ -12,12 +11,6 @@ const ChosenClip = ({data}) => {
     // TODO - ocultar de forma mais eficiente
     document.querySelector('footer').style.display = 'none';
   }, [])
-
-  const handleSelection = () => {
-    // Ação para o botão "recomeçar"
-    if (typeof localStorage !== 'undefined') localStorage.clear()
-    window.location.reload()
-  }
 
   return (
     <AnimatePresence mode="wait">
@@ -40,7 +33,10 @@ const ChosenClip = ({data}) => {
               <span>“{data.title || 'Título não retornado'}”</span>
             </p>
           </div>
-          <Button onclick={handleSelection} classname={'restart'}>
+          <Button onclick={() => {
+            if (typeof localStorage !== 'undefined') localStorage.clear()
+            window.location.reload()
+          }} classname={'restart'}>
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                    className="bi bi-arrow-left"

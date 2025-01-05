@@ -1,11 +1,12 @@
-import Main from './components/main/Main'
-import Footer from "./components/footer/footer";
-
-import './app.css'
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
+
+import Main from './components/main/Main'
+import Footer from "./components/footer/footer";
 import LoadingPage from "./components/loadingPage/loadingPage.jsx";
 import Welcome from "./components/welcome/welcome.jsx";
+
+import './app.css'
 
 function App() {
   const [roundPage, setRoundPage] = useState(1)
@@ -30,12 +31,16 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className={""}>
+      <div className={"app"}>
         <LoadingPage/>
       </div>
     )
   } else if (!clickInStarted) {
-    return <Welcome handleClickStart={setClickInStarted}/>
+    return (
+      <div className={"app"}>
+        <Welcome handleClickStart={setClickInStarted}/>
+      </div>
+    )
   } else if (clickInStarted) {
     return (
       <AnimatePresence mode="wait">
