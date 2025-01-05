@@ -1,0 +1,35 @@
+.button {
+  background-color: #6D28D9;
+  color: #C6ADFF;
+  border: none;
+  padding: 16px 30px;
+  width: 100%;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 700;
+
+  &:hover,
+  &:focus{
+    background-color: #8A3FFC;
+  }
+
+  &:disabled {
+    background-color: #6D28D9;
+    color: #C6ADFF;
+    cursor: not-allowed;
+  }
+
+  &.start,
+  &.restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &.row-reverse {
+    flex-direction: row-reverse;
+  }
+}

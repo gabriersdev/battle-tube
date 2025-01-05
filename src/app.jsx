@@ -5,6 +5,8 @@ import './app.css'
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import LoadingPage from "./components/loadingPage/loadingPage.jsx";
+import ChooseButton from "./components/chooseButton/chooseButton.jsx";
+import Welcome from "./components/welcome/welcome.jsx";
 
 function App() {
   const [roundPage, setRoundPage] = useState(1)
@@ -13,6 +15,7 @@ function App() {
   const [totalSelectionPages, setTotalSelectionPages] = useState(32)
   const [dataExport, setDataExport] = useState([])
   const [isloading, setIsLoading] = useState(true)
+  const [clickInStarted, setClickInStarted] = useState(false)
 
   const pushDataExport = (data) => {
     setDataExport([...dataExport, data])
@@ -23,33 +26,35 @@ function App() {
       setIsLoading(false)
     }, localStorage && localStorage.getItem('battle-tube-app') ? 0 : 2000)
 
-    if (typeof localStorage !== 'undefined') localStorage.setItem('battle-tube-app', JSON.stringify(new Date().getTime() * (Math.random() * 10)))
+    if (typeof localStorage !== 'undefined') localStorage.setItem('battle-tube-app', JSON.stringify({id: new Date().getTime() * (Math.random() * 10)}))
   }, []);
 
   if (isloading) {
     return (
-      <div className={"app"}>
+      <div className={""}>
         <LoadingPage/>
       </div>
     )
+  } else if (!clickInStarted) {
+    return <Welcome handleClickStart={setClickInStarted}/>
+  } else if (clickInStarted) {
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={0}
+          initial={{opacity: 0, y: 50}}
+          animate={{opacity: 1, y: 0}}
+          exit={{opacity: 0, y: -50}}
+          transition={{duration: 0.5, ease: "easeOut"}}
+          className={'app'}
+        >
+          <Main
+            functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
+          <Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>
+        </motion.div>
+      </AnimatePresence>
+    )
   }
-
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={0}
-        initial={{opacity: 0, y: 50}}
-        animate={{opacity: 1, y: 0}}
-        exit={{opacity: 0, y: -50}}
-        transition={{duration: 0.5, ease: "easeOut"}}
-        className={'app'}
-      >
-        <Main
-          functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
-        <Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>
-      </motion.div>
-    </AnimatePresence>
-  )
 }
 
 export default App

@@ -2,11 +2,11 @@ import './loadingPage.css';
 
 const LoadingPage = () => {
   return (
-    <div className="loading">
-      <div className="loading-text">
-        CARREGANDO...
+    <section className="loading">
+      <div className="loading-content">
+        <span className={'loading-text'}>CARREGANDO...</span>
       </div>
-    </div>
+    </section>
   )
 }
 
