@@ -4,6 +4,7 @@
   align-items: flex-end;
   flex-wrap: wrap;
   margin-top: 2rem;
+  font-size: 1rem;
 }
 
 .footer * {
@@ -16,6 +17,9 @@
 
 .footer-right {
   text-align: right;
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
 }
 
 .footer-btn-export {

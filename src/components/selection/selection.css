@@ -22,6 +22,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 769px) and (max-width: 1240px) {
+    display: none;
+  }
 }
 
 .selection-versus-img {

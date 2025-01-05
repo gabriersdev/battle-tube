@@ -1,0 +1,22 @@
+.loading {
+  .loading-text {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    /* Animação efeito esmaecer infinito */
+    animation: fadeInOut 1.5s infinite;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
