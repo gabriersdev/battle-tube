@@ -5,7 +5,6 @@ import './app.css'
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import LoadingPage from "./components/loadingPage/loadingPage.jsx";
-import ChooseButton from "./components/chooseButton/chooseButton.jsx";
 import Welcome from "./components/welcome/welcome.jsx";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
   const [selectionPage, setSelectionPage] = useState(1)
   const [totalSelectionPages, setTotalSelectionPages] = useState(32)
   const [dataExport, setDataExport] = useState([])
-  const [isloading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
   const [clickInStarted, setClickInStarted] = useState(false)
 
   const pushDataExport = (data) => {
@@ -29,7 +28,7 @@ function App() {
     if (typeof localStorage !== 'undefined') localStorage.setItem('battle-tube-app', JSON.stringify({id: new Date().getTime() * (Math.random() * 10)}))
   }, []);
 
-  if (isloading) {
+  if (isLoading) {
     return (
       <div className={""}>
         <LoadingPage/>
