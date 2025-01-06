@@ -9,6 +9,10 @@
   font-size: 24px;
   font-weight: 700;
 
+  &.no-margin {
+    margin: 0;
+  }
+
   &:hover,
   &:focus{
     background-color: #8A3FFC;
