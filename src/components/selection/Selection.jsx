@@ -3,8 +3,12 @@ import PropTypes from "prop-types";
 import {motion, AnimatePresence} from "framer-motion";
 import ClipContainer from "../clipContainer/ClipContainer.jsx";
 import ChosenClip from "../chosenClip/ChosenClip.jsx";
-import initialClips from "../../data/clips";
+import clipsData from "../../data/clips";
 import './selection.css'
+
+const initialClips = clipsData.map(clip => {
+  return {...clip, title: clip.title.replaceAll('"', '')}
+});
 
 const Selection = ({functions}) => {
   const {setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport} = functions;
@@ -15,7 +19,7 @@ const Selection = ({functions}) => {
   const [winners, setWinners] = useState([]); // Vencedores da rodada atual
 
   useEffect(() => {
-    if (initialClips === undefined || initialClips.length === 0 || !Array.isArray(initialClips) || initialClips.length % 2 !== 0) {
+    if (initialClips === undefined || initialClips.length === 0 || !Array.isArray(initialClips) || initialClips.length % 2 !== 0 || initialClips.length !== 64) {
       console.error('Erro: A lista de clipes não é válida!', initialClips, typeof initialClips);
       return (
         <div className={'selection selection-error'}>
@@ -26,6 +30,8 @@ const Selection = ({functions}) => {
 
     // Obter os dados do localStorage, se existirem
     if (typeof localStorage !== 'undefined') {
+      // TODO - os clipes armazenados no localStorage podem ser inválidos, verificar
+      // TODO - os clipes armazenados no localStorage podem ser diferentes da lista inicial, verificar
       const clips = JSON.parse(localStorage.getItem('clips'));
       const currentPairIndex = JSON.parse(localStorage.getItem('currentPairIndex'));
       const round = JSON.parse(localStorage.getItem('round'));
