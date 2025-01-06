@@ -34,7 +34,12 @@ const Footer = ({variables}) => {
         </button>
         <button data-action={"clear-and-reload"} onClick={() => {
           if (confirm('Tem certeza que deseja reiniciar? Todas as escolhas feitas até aqui serão perdidas para sempre.')) {
-            if (typeof localStorage !== 'undefined') localStorage.clear()
+            if (typeof localStorage !== 'undefined') {
+              const allStorage = Object.assign({}, localStorage)
+              localStorage.clear()
+              console.log('localStorage cleared', allStorage)
+              if (allStorage.logs && JSON.parse(allStorage.logs)) localStorage.setItem('logs', allStorage.logs)
+            }
             window.location.reload()
           }
         }} className={"footer-btn-export"}>
