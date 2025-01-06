@@ -29,6 +29,12 @@ function App() {
     if (typeof localStorage !== 'undefined') localStorage.setItem('battle-tube-app', JSON.stringify({id: new Date().getTime() * (Math.random() * 10)}))
   }, []);
 
+  useEffect(() => {
+    document.querySelectorAll('a').forEach(link => {
+      if (link.getAttribute('rel') === 'noopener noreferrer') link.setAttribute('rel', 'noopener noreferrer')
+    })
+  });
+
   if (isLoading) {
     return (
       <div className={"app"}>
