@@ -5,6 +5,7 @@ import ClipContainer from "../clipContainer/ClipContainer.jsx";
 import ChosenClip from "../chosenClip/ChosenClip.jsx";
 import clipsData from "../../data/clips";
 import './selection.css'
+import Util from "../../util/Util.js";
 
 const initialClips = clipsData.map(clip => {
   return {...clip, title: clip.title.replaceAll('"', '').trim()}
@@ -31,8 +32,6 @@ const Selection = ({functions}) => {
 
     // Obter os dados do localStorage, se existirem
     if (typeof localStorage !== 'undefined') {
-      // TODO - os clipes armazenados no localStorage podem ser inválidos, verificar
-      // TODO - os clipes armazenados no localStorage podem ser diferentes da lista inicial, verificar
       const clips = JSON.parse(localStorage.getItem('clips'));
       const currentPairIndex = JSON.parse(localStorage.getItem('currentPairIndex'));
       const round = JSON.parse(localStorage.getItem('round'));
@@ -40,14 +39,26 @@ const Selection = ({functions}) => {
       const logs = JSON.parse(localStorage.getItem('logs'));
 
       if (logs && logs.length > 0 && Array.isArray(logs)) {
-        setLogs(logs);
+        try {
+          setLogs(logs);
+        } catch (e) {
+          setLogs([]);
+          console.error('Erro ao carregar os logs do localStorage:', e)
+        }
       } else {
         setLogs([])
       }
 
-      if (clips && currentPairIndex !== null && round !== null && winners) {
+      if (clips && clips.length > 0 && Array.isArray(clips) && Util.includesObjects(clips, initialClips)) {
         try {
           setClips(clips);
+        } catch (e) {
+          console.error('Erro ao carregar os clips do localStorage:', e)
+        }
+      }
+
+      if (currentPairIndex !== null && round !== null && winners) {
+        try {
           setCurrentPairIndex(currentPairIndex);
           setRound(round);
           setWinners(winners);
