@@ -33,10 +33,16 @@ const ChosenClip = ({data}) => {
               <span>“{data.title ? data.title.trim() : 'Título não retornado'}”</span>
             </p>
           </div>
-          <Button onclick={() => {
-            if (typeof localStorage !== 'undefined') localStorage.clear()
-            window.location.reload()
-          }} classname={'restart'}>
+          <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
+            <Button onclick={() => {
+              if (typeof localStorage !== 'undefined') {
+                const allStorage = Object.assign({}, localStorage)
+                localStorage.clear()
+                console.log('localStorage cleared', allStorage)
+                if (allStorage.logs && JSON.parse(allStorage.logs)) localStorage.setItem('logs', allStorage.logs)
+              }
+              window.location.reload()
+            }} classname={'restart no-margin'}>
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                    className="bi bi-arrow-left"
@@ -45,8 +51,24 @@ const ChosenClip = ({data}) => {
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
                 </svg>
             </span>
-            <span>RECOMEÇAR</span>
-          </Button>
+              <span>RECOMEÇAR</span>
+            </Button>
+            <Button onclick={() => {
+              window.open('https://github.com/eskimozin/battle-tube/issues/new', '_blank', 'noopener,noreferrer')
+            }} classname={'link-external no-margin'}>
+              <span>INFORMAR UM PROBLEMA</span>
+              <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
+              <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
+                   fill="#C6ADFF"
+                   style={{paddingTop: 0, margin: 0, paddingLeft: '0.35rem'}}>
+               <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
+              </svg>
+            </span>
+            </Button>
+          </div>
+          <p className={'chosen-paragraph'}>
+            <span>FEITO PELO GABRIERS</span>
+          </p>
         </div>
         <div className={'chosen-clip-video'}>
           <IframeClip className={'clip-iframe chosen'} id={data.id}/>
