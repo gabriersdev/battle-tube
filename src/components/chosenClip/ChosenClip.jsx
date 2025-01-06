@@ -30,7 +30,7 @@ const ChosenClip = ({data}) => {
               <span className={'chosen-username'}>{data.username || 'Username não retornado'}</span>
             </p>
             <p className={'chosen-paragraph'}>
-              <span>“{data.title || 'Título não retornado'}”</span>
+              <span>“{data.title ? data.title.trim() : 'Título não retornado'}”</span>
             </p>
           </div>
           <Button onclick={() => {

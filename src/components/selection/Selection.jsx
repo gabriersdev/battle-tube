@@ -7,7 +7,7 @@ import clipsData from "../../data/clips";
 import './selection.css'
 
 const initialClips = clipsData.map(clip => {
-  return {...clip, title: clip.title.replaceAll('"', '')}
+  return {...clip, title: clip.title.replaceAll('"', '').trim()}
 });
 
 const Selection = ({functions}) => {
