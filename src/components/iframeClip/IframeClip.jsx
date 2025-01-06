@@ -5,7 +5,7 @@ const IframeClip = ({refIframe, className, id}) => {
     <iframe
       ref={refIframe}
       className={className}
-      src={`https://clips.twitch.tv/embed?clip=${id}&parent=localhost`}
+      src={`https://clips.twitch.tv/embed?clip=${id}&parent=${window.location.hostname || 'localhost'}`}
       allowFullScreen>
     </iframe>
   )
