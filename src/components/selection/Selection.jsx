@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import {motion, AnimatePresence} from "framer-motion";
-import ClipContainer from "../clipContainer/clipContainer";
-import ChosenClip from "../chosenClip/chosenClip";
+import ClipContainer from "../clipContainer/ClipContainer.jsx";
+import ChosenClip from "../chosenClip/ChosenClip.jsx";
 import initialClips from "../../data/clips";
 import './selection.css'
 

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Clip from "../clip/clip";
+import Clip from "../clip/Clip.jsx";
 import './clipContainer.css'
 
 const ClipContainer = ({data, index, handleSelection, click}) => {

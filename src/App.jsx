@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 
-import Main from './components/main/Main'
-import Footer from "./components/footer/footer";
-import LoadingPage from "./components/loadingPage/loadingPage.jsx";
-import Welcome from "./components/welcome/welcome.jsx";
+import Main from './components/main/Main.jsx'
+import Footer from "./components/footer/Footer.jsx";
+import LoadingPage from "./components/loadingPage/LoadingPage.jsx";
+import Welcome from "./components/welcome/Welcome.jsx";
 
 import './app.css'
 

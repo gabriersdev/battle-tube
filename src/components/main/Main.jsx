@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import Selection from "../selection/selection";
+import Selection from "../selection/Selection.jsx";
 import PropTypes from "prop-types";
 import './main.css'
 

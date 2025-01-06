@@ -1,7 +1,7 @@
 import {useRef, useState} from "react";
 import PropTypes from "prop-types";
-import ChooseButton from "../chooseButton/chooseButton";
-import IframeClip from "../iframeClip/iframeClip";
+import ChooseButton from "../chooseButton/ChooseButton.jsx";
+import IframeClip from "../iframeClip/IframeClip.jsx";
 import './clip.css';
 
 const Clip = ({data, index, handleSelection, click}) => {

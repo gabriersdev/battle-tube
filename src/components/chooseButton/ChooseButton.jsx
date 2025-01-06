@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import './chooseButton.css';
-import Button from "../button/button.jsx";
+import Button from "../button/Button.jsx";
 
 const ChooseButton = ({index, handleSelection}) => {
   const handleClick = (e) => {

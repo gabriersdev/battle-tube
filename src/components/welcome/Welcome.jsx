@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Button from "../button/button.jsx";
+import Button from "../button/Button.jsx";
 import './welcome.css';
 import {AnimatePresence, motion} from "framer-motion";
 
