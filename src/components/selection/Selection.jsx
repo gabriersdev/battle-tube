@@ -168,7 +168,7 @@ const Selection = ({functions}) => {
       >
         <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
         <div className={'selection-versus'}>
-          <img src={'versus-img.png'} alt={'VS.'} className={'selection-versus-img'} loading={"lazy"}/>
+          <img src={'/images/versus-img.png'} alt={'VS.'} className={'selection-versus-img'} loading={"lazy"}/>
         </div>
         <ClipContainer data={getClipData(1)} handleSelection={handleSelection} index={1}/>
       </motion.div>
