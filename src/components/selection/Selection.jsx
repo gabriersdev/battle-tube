@@ -96,6 +96,7 @@ const Selection = ({functions}) => {
     setWinners((prev) => [...prev, winner]);
 
     const data = {
+      datetime: new Date().toISOString(),
       SEL: `${currentPairIndex + 1}/${clips.length / 2}`,
       ROD: `${round}/${Math.log2(initialClips.length)}`,
       title: winner.title,
