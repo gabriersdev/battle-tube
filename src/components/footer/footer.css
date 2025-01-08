@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 2rem;
   font-size: 1rem;
 }
@@ -13,12 +14,13 @@
 
 .footer-left {
   text-align: left;
-  gap: 0.5rem;
+  flex-direction: column;
 }
 
 .footer-right {
-  text-align: right;
   flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
   gap: 0.25rem;
 }
 
@@ -28,10 +30,16 @@
   flex-wrap: wrap;
 }
 
-.footer-btn-export {
+.footer-btn-export,
+.footer-btn-clear {
   color: #C6ADFF;
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   flex-direction: row-reverse;
   gap: 0.05rem;
+
+  span:first-child {
+    margin-top: 0.25rem;
+  }
 }

@@ -66,9 +66,6 @@ const ChosenClip = ({data}) => {
             </span>
             </Button>
           </div>
-          <p className={'chosen-paragraph'}>
-            <span>FEITO PELO GABRIERS</span>
-          </p>
         </div>
         <div className={'chosen-clip-video'}>
           <IframeClip className={'clip-iframe chosen'} id={data.id}/>

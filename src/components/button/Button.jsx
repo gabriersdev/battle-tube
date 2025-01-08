@@ -3,7 +3,7 @@ import './button.css'
 
 const Button = ({children, classname, onclick}) => {
   return (
-    <button style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}} className={`button ${classname}`} onClick={onclick}>{children}</button>
+    <button className={`button ${classname}`} onClick={onclick}>{children}</button>
   )
 }
 
