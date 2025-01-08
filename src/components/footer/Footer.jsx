@@ -10,7 +10,7 @@ const Footer = ({variables}) => {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'data.json'
+    a.download = 'battle-tube-application-data.json'
     document.body.appendChild(a)
     a.click()
     a.remove()
