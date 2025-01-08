@@ -24,6 +24,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  text-wrap: balance;
 
   @media screen and (max-width: 768px) {
     -webkit-line-clamp: 2;

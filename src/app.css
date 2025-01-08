@@ -15,3 +15,7 @@
 .none {
   display: none;
 }
+
+.unsecure-text {
+  overflow-wrap: anywhere;
+}

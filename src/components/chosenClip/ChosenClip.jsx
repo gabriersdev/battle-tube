@@ -27,9 +27,9 @@ const ChosenClip = ({data}) => {
           <div className={'chosen-clip-info'}>
             <p className={'chosen-paragraph'}>
               <span>CLIPADO POR</span>&nbsp;
-              <span className={'chosen-username'}>{data.username || 'Username não retornado'}</span>
+              <span className={'chosen-username unsecure-text'}>{data.username || 'Username não retornado'}</span>
             </p>
-            <p className={'chosen-paragraph'}>
+            <p className={'chosen-paragraph unsecure-text'}>
               <span>“{data.title ? data.title.trim() : 'Título não retornado'}”</span>
             </p>
           </div>
