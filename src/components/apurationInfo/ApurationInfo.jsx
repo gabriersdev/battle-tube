@@ -12,7 +12,7 @@ const ApurationInfo = () => {
         <p>SELECIONAMOS AQUI APENAS OS <span className={'neon-text'}>64 MELHORES</span></p>
       </div>
       <div data-aos="fade-up" data-aos-delay={2500} data-aos-duration={1500}>
-        <p>E VOCÊ TEM A MISSÃO DE ESCOLHER O MELHOR</p>
+        <p>E VOCÊ TEM <span className={'neon-text'}>A MISSÃO</span> DE ESCOLHER O MELHOR</p>
       </div>
     </div>
   )
