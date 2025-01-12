@@ -50,6 +50,22 @@ class Util {
       }
     })
   }
+
+  static shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // Enquanto ainda houver elementos para embaralhar
+    while (currentIndex != 0) {
+      // Escolha um elemento restante
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // Troque com o elemento atual
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
 }
 
 export default Util;

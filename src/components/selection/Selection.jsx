@@ -7,7 +7,7 @@ import clipsData from "../../data/clips";
 import './selection.css'
 import Util from "../../util/Util.js";
 
-const initialClips = clipsData.map(clip => {
+const initialClips = Util.shuffle(clipsData).map(clip => {
   return {...clip, title: clip.title.replaceAll('"', '').trim()}
 });
 
