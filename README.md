@@ -25,3 +25,7 @@ A versão atual do projeto pode ser acessada em <https://battle-tube.vercel.app/
 
 > [!NOTE]
 > O projeto está em desenvolvimento e pode sofrer alterações. A versão atual é a 1.0.0. É possível que haja bugs e problemas de usabilidade. Dados importantes para o funcionamento correto são persistidos no localStorage do navegador.
+
+## Créditos
+
+- Animação de festa (confetes): <https://codepen.io/zer0kool/pen/KjZWRW>

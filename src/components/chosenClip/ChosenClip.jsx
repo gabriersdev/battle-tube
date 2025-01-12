@@ -5,6 +5,7 @@ import {AnimatePresence, motion} from "framer-motion";
 import './chosenClip.css';
 import '../clip/clip.css';
 import Button from "../button/Button.jsx";
+import Confetti from "../confetti/Confetti.jsx";
 
 const ChosenClip = ({data}) => {
   useEffect(() => {
@@ -29,7 +30,8 @@ const ChosenClip = ({data}) => {
           <div className={'chosen-clip-info'}>
             <p className={'chosen-paragraph'}>
               <span>CLIPADO POR</span>&nbsp;
-              <span className={'chosen-username unsecure-text neon-text'}>{data.username || 'Username não retornado'}</span>
+              <span
+                className={'chosen-username unsecure-text neon-text'}>{data.username || 'Username não retornado'}</span>
             </p>
             <p className={'chosen-paragraph unsecure-text'}>
               <span>“{data.title ? data.title.trim() : 'Título não retornado'}”</span>
@@ -79,6 +81,7 @@ const ChosenClip = ({data}) => {
         <div className={'chosen-clip-video'}>
           <IframeClip className={'clip-iframe chosen'} id={data.id}/>
         </div>
+        <Confetti/>
       </motion.div>
     </AnimatePresence>
   )
