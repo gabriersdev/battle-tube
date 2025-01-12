@@ -169,7 +169,7 @@ const Selection = ({functions}) => {
       >
         <ClipContainer data={getClipData(0)} handleSelection={handleSelection} index={0}/>
         <div className={'selection-versus'}>
-          <h2 className={'selection-versus-title'}>VS</h2>
+          <h2 className={'selection-versus-title'} style={{fontStyle: 'italic'}}>VS.</h2>
         </div>
         <ClipContainer data={getClipData(1)} handleSelection={handleSelection} index={1}/>
       </motion.div>

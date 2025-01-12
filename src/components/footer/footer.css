@@ -14,7 +14,7 @@
 
 .footer-left {
   text-align: left;
-  flex-direction: column;
+  gap: 0.5rem
 }
 
 .footer-right {
@@ -34,12 +34,7 @@
 .footer-btn-clear {
   color: #C6ADFF;
   display: inline-flex;
-  align-items: center;
   justify-content: flex-end;
   flex-direction: row-reverse;
   gap: 0.05rem;
-
-  span:first-child {
-    margin-top: 0.25rem;
-  }
 }

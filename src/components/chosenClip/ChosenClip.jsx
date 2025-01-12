@@ -23,11 +23,13 @@ const ChosenClip = ({data}) => {
         className={'chosen-clip'}
       >
         <div className={'chosen-clip-content'}>
-          <h2 className={'chosen-title'}>o melhor clipe escolhido por você</h2>
+          <h2 className={'chosen-title'}>
+            <span>O melhor clipe escolhido por você</span>
+          </h2>
           <div className={'chosen-clip-info'}>
             <p className={'chosen-paragraph'}>
               <span>CLIPADO POR</span>&nbsp;
-              <span className={'chosen-username unsecure-text'}>{data.username || 'Username não retornado'}</span>
+              <span className={'chosen-username unsecure-text neon-text'}>{data.username || 'Username não retornado'}</span>
             </p>
             <p className={'chosen-paragraph unsecure-text'}>
               <span>“{data.title ? data.title.trim() : 'Título não retornado'}”</span>
@@ -65,6 +67,13 @@ const ChosenClip = ({data}) => {
               </svg>
             </span>
             </Button>
+          </div>
+          <div className={'chosen-clip-info'}>
+            <p className={'chosen-paragraph'}>
+              <span>Feito com</span>&nbsp;
+              <span>❤️</span>&nbsp;
+              <span>pelo Gabriel</span>
+            </p>
           </div>
         </div>
         <div className={'chosen-clip-video'}>

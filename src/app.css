@@ -19,3 +19,14 @@
 .unsecure-text {
   overflow-wrap: anywhere;
 }
+
+.neon-text {
+  text-shadow:
+    0 0 5px #6D28D9,
+    0 0 10px #6D28D9,
+    0 0 30px #C6ADFF;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
