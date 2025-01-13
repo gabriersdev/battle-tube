@@ -1,3 +1,6 @@
+@import url(./assets/css/normalize.css);
+@import url(./assets/css/reset.css);
+
 .app {
   margin: 5rem 0;
   width: 90vw;
