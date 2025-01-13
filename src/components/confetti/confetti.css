@@ -7,7 +7,7 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 1;
 }
 .confetti-piece {
     position: absolute;

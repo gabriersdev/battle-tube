@@ -22,6 +22,7 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
+  z-index: 2;
 }
 
 .chosen-title {
@@ -49,4 +50,5 @@
 
 .chosen-clip-video {
   width: min(600px, 100%);
+  z-index: 3;
 }
