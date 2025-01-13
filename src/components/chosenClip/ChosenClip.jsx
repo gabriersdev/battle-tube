@@ -39,6 +39,18 @@ const ChosenClip = ({data}) => {
           </div>
           <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
             <Button onclick={() => {
+            }} classname={'link-external no-margin'}>
+              <span>OUTRAS ESTATÍSTICAS</span>
+              <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                     fill="#C6ADFF"
+                     style={{paddingTop: 0, margin: 0, paddingLeft: '0.35rem'}}>
+                  <path
+                    d="M160-160v-320h160v320H160Zm240 0v-640h160v640H400Zm240 0v-440h160v440H640Z"/>
+                </svg>
+              </span>
+            </Button>
+            <Button onclick={() => {
               if (typeof localStorage !== 'undefined') {
                 const allStorage = Object.assign({}, localStorage)
                 localStorage.clear()
@@ -48,7 +60,7 @@ const ChosenClip = ({data}) => {
               window.location.reload()
             }} classname={'restart no-margin'}>
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
                    className="bi bi-arrow-left"
                    viewBox="0 0 16 16">
                 <path fillRule="evenodd"
@@ -62,7 +74,7 @@ const ChosenClip = ({data}) => {
             }} classname={'link-external no-margin'}>
               <span>INFORMAR UM PROBLEMA</span>
               <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
-              <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
+              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
                    fill="#C6ADFF"
                    style={{paddingTop: 0, margin: 0, paddingLeft: '0.35rem'}}>
                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
