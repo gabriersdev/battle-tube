@@ -72,7 +72,7 @@ function App() {
         >
           <h2 style={{marginBottom: '1rem'}}>Estatísticas de Clipes do Canal</h2>
           <div style={{textAlign: 'left'}}>
-            <p style={{marginBottom: '1rem'}}>
+            <div style={{marginBottom: '1rem'}}>
               <h3 style={{
                 textTransform: 'uppercase',
                 color: 'purple',
@@ -87,9 +87,9 @@ function App() {
               </ol>
 
               5.067 CLIPES FEITOS NO ANO
-            </p>
+            </div>
 
-            <p style={{marginBottom: '1rem'}}>
+            <div style={{marginBottom: '1rem'}}>
               <h3 style={{
                 textTransform: 'uppercase',
                 color: 'purple',
@@ -102,9 +102,9 @@ function App() {
                 <li>ROBERTINHO, 50 CLIPES</li>
                 <li>CLEBER, 20 CLIPES</li>
               </ol>
-            </p>
+            </div>
 
-            <p style={{marginBottom: '1rem'}}>
+            <div style={{marginBottom: '1rem'}}>
               <h3 style={{
                 textTransform: 'uppercase',
                 color: 'purple',
@@ -112,20 +112,20 @@ function App() {
                 marginBottom: '0.5rem'
               }}>Visualizações</h3>
               <p>TODOS OS CLIPES FEITOS EM 2024, SOMARAM, JUNTOS 1.000.000 DE VISUALIZAÇÕES</p>
-            </p>
+            </div>
 
-            <p style={{marginBottom: '1rem'}}>
+            <div style={{marginBottom: '1rem'}}>
               OS CLIPES DE 2024 MAIS VISTOS:
               <ol>
                 <li>CLIPÃO, 500.000 VISUALIZAÇÕES</li>
                 <li>CLIPINHO, 250.000 VISUALIZAÇÕES</li>
                 <li>CLIPIN, 100.000 VISUALIZAÇÕES</li>
               </ol>
-            </p>
+            </div>
 
-            <p style={{marginBottom: '1rem'}}>
+            <div style={{marginBottom: '1rem'}}>
               Dados obtidos entre entre os dias 01 e 02/01/2025 utilizando a API da Twitch. Confira mais detalhes em <a href={"#"}>link.com</a>.
-            </p>
+            </div>
           </div>
           <button style={{color: "purple"}} onClick={(e) => e.target.closest('dialog').close()}>X FECHAR</button>
         </dialog>
@@ -146,8 +146,7 @@ function App() {
               boxSizing: 'border-box'
             }}
           >
-            Ao continuar, você concorda que alguns dados serão armazenados no navegador para melhorar a sua experiência,
-            análise de dados, correção de erros e descoberta de bugs.
+            Ao prosseguir, você concorda com o armazenamento de alguns dados no navegador para aprimorar sua experiência, realizar análises de perfomance, corrigir erros e identificar bugs.
           </motion.div>
         </AnimatePresence>
       </div>
