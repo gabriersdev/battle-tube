@@ -1,0 +1,47 @@
+.modal-dialog-analytics {
+  padding: 1rem;
+  border: 1px solid #C6ADFF50;
+  width: min(calc(100% - 2rem), 600px);
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  background: #121212 !important;
+  color: #F6F6F6;
+  border-radius: 5px;
+
+  &::backdrop {
+    background: #000;
+    opacity: 0.75;
+  }
+
+  .modal-group {
+    margin: 1rem auto 0 auto;
+  }
+
+  .modal-group-title {
+    text-transform: uppercase;
+    color: purple;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-group-list {
+    margin: 1rem auto 0 1rem;
+  }
+
+  .modal-group-list li {
+    list-style-type: decimal;
+  }
+
+  .modal-group-add-info {
+    margin-top: 1rem;
+    display: block;
+  }
+
+  .btn-close-modal {
+    color: purple;
+    margin-top: 1rem;
+  }
+}
+
