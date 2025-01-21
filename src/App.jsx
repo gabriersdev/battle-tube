@@ -2,14 +2,13 @@ import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import AOS from 'aos';
 
-import Main from './components/main/Main.jsx'
+import {Main} from './components/main/Main.jsx'
 import Footer from "./components/footer/Footer.jsx";
 import LoadingPage from "./components/loadingPage/LoadingPage.jsx";
 import Welcome from "./components/welcome/Welcome.jsx";
 
 import 'aos/dist/aos.css';
 import './app.css'
-import Dialog from "./components/dialog/Dialog.jsx";
 
 function App() {
   const [roundPage, setRoundPage] = useState(1)
@@ -48,7 +47,6 @@ function App() {
   } else if (!clickInStarted) {
     return (
       <div className={"app"}>
-        <Dialog/>
         <Welcome handleClickStart={setClickInStarted}/>
         <AnimatePresence mode="wait">
           <motion.div
@@ -66,7 +64,8 @@ function App() {
               boxSizing: 'border-box'
             }}
           >
-            Ao prosseguir, você concorda com o armazenamento de alguns dados no navegador para aprimorar sua experiência, realizar análises de perfomance, corrigir erros e identificar bugs.
+            Ao prosseguir, você concorda com o armazenamento de alguns dados no navegador para aprimorar sua
+            experiência, realizar análises de perfomance, corrigir erros e identificar bugs.
           </motion.div>
         </AnimatePresence>
       </div>
@@ -82,7 +81,6 @@ function App() {
           transition={{duration: 0.5, ease: "easeOut"}}
           className={'app'}
         >
-          <Dialog />
           <Main
             functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
           <Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>

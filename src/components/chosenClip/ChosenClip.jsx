@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useContext, useEffect} from "react";
 import PropTypes from "prop-types";
 import IframeClip from "../iframeClip/IframeClip.jsx";
 import {AnimatePresence, motion} from "framer-motion";
@@ -6,8 +6,11 @@ import './chosenClip.css';
 import '../clip/clip.css';
 import Button from "../button/Button.jsx";
 import Confetti from "../confetti/Confetti.jsx";
+import {Theme} from "../main/Main.jsx";
 
 const ChosenClip = ({data}) => {
+  const {dialog} = useContext(Theme)
+
   useEffect(() => {
     // TODO - ocultar de forma mais eficiente
     document.querySelector('footer').style.display = 'none';
@@ -39,6 +42,7 @@ const ChosenClip = ({data}) => {
           </div>
           <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
             <Button onclick={() => {
+              dialog.current.showModal()
             }} classname={'link-external no-margin'}>
               <span>OUTRAS ESTATÍSTICAS</span>
               <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>

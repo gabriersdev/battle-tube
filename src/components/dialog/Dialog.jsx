@@ -1,8 +1,9 @@
-import {useRef} from "react";
+import {useContext, useRef} from "react";
 import './dialog.css'
+import {Theme} from "../main/Main.jsx";
 
 const Dialog = () => {
-  const dialog = useRef(null)
+  let {dialog} = useContext(Theme)
 
   return (
     <dialog className={"modal-dialog-analytics"} ref={dialog}>
@@ -50,7 +51,7 @@ const Dialog = () => {
           </p>
         </div>
       </div>
-      <button className={'btn-close-modal'} onClick={(e) => e.target.closest('dialog').close()}>X FECHAR</button>
+      <button className={'btn-close-modal'} onClick={(e) => e.target.closest('dialog').close()}>FECHAR [X]</button>
     </dialog>
   )
 }
