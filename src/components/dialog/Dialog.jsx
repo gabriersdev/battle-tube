@@ -1,9 +1,13 @@
-import {useContext, useRef} from "react";
+import {useContext} from "react";
 import './dialog.css'
 import {Theme} from "../main/Main.jsx";
 
 const Dialog = () => {
   let {dialog} = useContext(Theme)
+
+  const clipsPerMonth = []
+  const viewsPerClipper = []
+  const viewsPerClip = []
 
   return (
     <dialog className={"modal-dialog-analytics"} ref={dialog}>
