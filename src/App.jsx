@@ -35,7 +35,7 @@ function App() {
 
   useEffect(() => {
     document.querySelectorAll('a').forEach(link => {
-      if (link.getAttribute('rel') === 'noopener noreferrer') link.setAttribute('rel', 'noopener noreferrer')
+      if (link.getAttribute('rel') !== 'noopener noreferrer') link.setAttribute('rel', 'noopener noreferrer')
     })
   });
 
