@@ -1,5 +1,7 @@
+import data from '../../data/scrapping.js';
+
 const ApurationInfo = () => {
-  const countClipsYear = 5067;
+  const countClipsYear = data.totalClips || 'MUITOS';
   const selectionYear = 2024
 
   return (
