@@ -42,7 +42,8 @@ const ChosenClip = ({data}) => {
           </div>
           <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
             <Button onclick={() => {
-              dialog.current.showModal()
+              if (dialog.current) dialog.current.showModal();
+              else document.querySelector('.modal-dialog-analytics').showModal();
             }} classname={'link-external no-margin'}>
               <span>OUTRAS ESTATÍSTICAS</span>
               <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
