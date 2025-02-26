@@ -9,6 +9,7 @@ import Welcome from "./components/welcome/Welcome.jsx";
 
 import 'aos/dist/aos.css';
 import './app.css'
+import Tootip from "./components/tooltip/Tooltip.jsx";
 
 function App() {
   const [roundPage, setRoundPage] = useState(1)
@@ -47,6 +48,7 @@ function App() {
   } else if (!clickInStarted) {
     return (
       <div className={"app"}>
+        <Tootip />
         <Welcome handleClickStart={setClickInStarted}/>
         <AnimatePresence mode="wait">
           <motion.div
@@ -81,6 +83,7 @@ function App() {
           transition={{duration: 0.5, ease: "easeOut"}}
           className={'app'}
         >
+          <Tootip />
           <Main
             functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
           <Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>

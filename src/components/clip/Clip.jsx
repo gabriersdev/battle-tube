@@ -24,7 +24,7 @@ const Clip = ({data, index, handleSelection, click}) => {
 
   return (
     <div className="clip">
-      <h2 className="clip-title unsecure-text" ref={title} style={{maxWidth: maxWidth}} title={data.title}>{data.title}</h2>
+      <h2 className="clip-title unsecure-text" ref={title} style={{maxWidth: maxWidth}} data-tooltip={data.title}>{data.title}</h2>
       <div className="clip-username unsecure-text neon-text">{data.username}</div>
       <div>
         <IframeClip refIframe={iframe} className={'clip-iframe'} id={data.id}/>
