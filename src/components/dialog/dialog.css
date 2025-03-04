@@ -1,4 +1,8 @@
 .modal-dialog-analytics {
+  * {
+    text-transform: uppercase;
+  }
+
   padding: 1rem;
   border: 1px solid #C6ADFF50;
   width: min(calc(100% - 2rem), 600px);
@@ -16,22 +20,23 @@
   }
 
   .modal-group {
-    margin: 1rem auto 0 auto;
+    padding: 2rem 0;
+    border-bottom: 1px solid #C6ADFF25;
   }
 
   .modal-group-title {
     text-transform: uppercase;
-    color: purple;
+    color: #6D28D9;
     font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-
-  .modal-group-list {
-    margin: 1rem auto 0 1rem;
+    font-size: 1.5rem;
+    width: min(300px, 100%);
+    margin-bottom: 0.75rem;
+    text-wrap: balance;
   }
 
   .modal-group-list li {
-    list-style-type: decimal;
+    list-style-type: none;
+    margin-bottom: 0.25rem;
   }
 
   .modal-group-add-info {
@@ -40,8 +45,12 @@
   }
 
   .btn-close-modal {
-    color: purple;
+    color: #6D28D9;
     margin-top: 1rem;
+  }
+
+  .text-emphasis {
+    font-size: 2rem;
   }
 }
 

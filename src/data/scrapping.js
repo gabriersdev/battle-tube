@@ -62,7 +62,7 @@ export default {
       "video_id": "",
       "game_id": "509658",
       "language": "pt-br",
-      "title": "UM SALVE DO VOVÔ NILSON ISAIAS PAPINHO",
+      "title": "UM SALVE DO VOVO NILSON ISAIAS PAPINHO",
       "view_count": 815,
       "created_at": 1715818870000,
       "thumbnail_url": "https://clips-media-assets2.twitch.tv/Cusw9AN3H75B5DUsGG2NKw/AT-cm%7CCusw9AN3H75B5DUsGG2NKw-preview-480x272.jpg",
