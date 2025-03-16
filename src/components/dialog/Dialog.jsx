@@ -2,6 +2,7 @@ import {useRef} from "react";
 import data from '../../data/scrapping.js';
 
 import './dialog.css'
+import Util from "../../util/Util.js";
 
 const Dialog = () => {
   let {currentYear, totalClips, monthMoreClips, topClippers, totalViews, topClips, scrappingInit, scrappingFinish} = {
@@ -83,7 +84,7 @@ const Dialog = () => {
                 return (
                   <li key={i}>
                     <a href={clip.url || '#'} target={"_blank"}>
-                      <b className={"text-emphasis"}>{clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}</b>
+                      <b className={"text-emphasis"} title={Util.capitalizeText(clip.title || "Título não retornado")}>{clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}</b>
                       <span>,{" "}</span>
                       <span><b className={"text-emphasis"}>{clip.view_count.toLocaleString('pt-br') || 'VÁRIAS'}</b> VISUALIZAÇÕES</span>
                     </a>

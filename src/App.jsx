@@ -48,7 +48,7 @@ function App() {
   } else if (!clickInStarted) {
     return (
       <div className={"app"}>
-        <Tootip />
+        <Tootip/>
         <Welcome handleClickStart={setClickInStarted}/>
         <AnimatePresence mode="wait">
           <motion.div
@@ -57,13 +57,16 @@ function App() {
             animate={{opacity: 1, y: 0}}
             exit={{opacity: 0, y: -50}}
             transition={{duration: 0.5, ease: "easeOut"}}
+            className={"inter"}
             style={{
               padding: '1rem',
               border: '1px solid #C6ADFF50',
               width: 'min(calc(100% - 2rem), 500px)',
               margin: '1.5rem auto 0 auto',
               textAlign: 'center',
-              boxSizing: 'border-box'
+              boxSizing: 'border-box',
+              fontWeight: 300,
+              letterSpacing: '0.0225rem',
             }}
           >
             Ao prosseguir, você concorda com o armazenamento de alguns dados no navegador para aprimorar sua
@@ -83,7 +86,7 @@ function App() {
           transition={{duration: 0.5, ease: "easeOut"}}
           className={'app'}
         >
-          <Tootip />
+          <Tootip/>
           <Main
             functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
           <Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>

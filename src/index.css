@@ -4,3 +4,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #121212;
+  color: #F6F6F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body * {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.inter {
+  font-family: "Inter Tight", "Chakra Petch", sans-serif;
+}

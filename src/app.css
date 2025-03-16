@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(./assets/css/normalize.css);
 @import url(./assets/css/reset.css);
 
@@ -24,10 +25,9 @@
 }
 
 .neon-text {
-  text-shadow:
-    0 0 5px #6D28D9,
-    0 0 10px #6D28D9,
-    0 0 30px #C6ADFF;
+  text-shadow: 0 0 5px #6D28D9,
+  0 0 10px #6D28D9,
+  0 0 30px #C6ADFF;
 }
 
 .text-balance {

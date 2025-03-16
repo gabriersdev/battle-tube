@@ -18,6 +18,7 @@ export default function Tootip() {
         tooltip.style.top = `${rect.top - 10}px`;
         tooltip.style.opacity = "1";
         tooltip.style.visibility = "visible";
+        tooltip.classList.add('inter');
 
         target.addEventListener("mouseleave", () => {
           tooltip.remove();
