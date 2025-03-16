@@ -14,6 +14,7 @@ const StatisticDialog = () => {
   };
 
   const [index, setIndex] = useState(0);
+  const [styleButtons, setStyleButtons] = useState({});
   const [groups] = useState([
     (
       <div key={"#1"} className={'modal-group'}>
@@ -95,6 +96,23 @@ const StatisticDialog = () => {
         {groups[index]}
       </AnimationPresence>
     ))
+
+    if (index === groups.length - 1) {
+      setStyleButtons([
+        {display: 'flex', flexDirection: 'column', alignItems: 'stretch'},
+        {display: 'none'}
+      ]);
+    } else if (index === 0) {
+      setStyleButtons([
+        {display: 'none'},
+        {display: 'flex', flexDirection: 'column', alignItems: 'stretch'}
+      ]);
+    } else {
+      setStyleButtons([
+        {display: 'flex', flexDirection: 'column', alignItems: 'stretch'},
+        {display: 'flex', flexDirection: 'column', alignItems: 'stretch'}
+      ]);
+    }
   }, [groups, index, setIndex])
 
   return (
@@ -106,10 +124,11 @@ const StatisticDialog = () => {
         <div style={{textAlign: 'left', marginBottom: '1rem'}}>
           <span>{("0" + (index + 1)).slice(-2).toLocaleString()}/{("0" + groups.length).slice(-2)}</span>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', gap: '0.5rem', flexWrap: 'wrap'}}>
-          <Button classname={'icon no-margin'} onclick={() => {
-            setIndex(index - 1 >= 0 ? index - 1 : index);
-          }}>
+        <div style={{display: 'flex', gap: '0.5rem', flexDirection: 'column'}}>
+          <div style={{...styleButtons[0]}}>
+            <Button classname={'icon no-margin'} onclick={() => {
+              setIndex(index - 1 >= 0 ? index - 1 : index);
+            }}>
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
                    className="bi bi-arrow-left"
@@ -118,14 +137,16 @@ const StatisticDialog = () => {
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
               </svg>
             </span>
-            <span>Anterior</span>
-          </Button>
-          <Button classname={'icon no-margin'} onclick={() => {
-            setIndex(index + 1 <= groups.length - 1 ? index + 1 : index);
-            11
-          }}>
-            <span>Próximo</span>
-            <span>
+              <span>Anterior</span>
+            </Button>
+          </div>
+          <div style={{...styleButtons[1]}}>
+            <Button classname={'icon no-margin'} onclick={() => {
+              setIndex(index + 1 <= groups.length - 1 ? index + 1 : index);
+              11
+            }}>
+              <span>Próximo</span>
+              <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
                    className="bi bi-arrow-right"
                    viewBox="0 0 16 16">
@@ -133,7 +154,8 @@ const StatisticDialog = () => {
                       d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
               </svg>
             </span>
-          </Button>
+            </Button>
+          </div>
         </div>
 
         <div className={'modal-group'}>

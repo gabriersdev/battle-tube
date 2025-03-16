@@ -18,7 +18,7 @@ const Welcome = ({handleClickStart}) => {
     <AnimatePresence mode="wait">
       <motion.section
         key={new Date().getTime().toString()}
-        initial={{opacity: 0, y: 50}}
+        initial={{opacity: 0, y: 0}}
         animate={{opacity: 1, y: 0}}
         exit={{opacity: 0, y: 0}}
         transition={{duration: 0.5, ease: "easeInOut"}}
@@ -29,7 +29,13 @@ const Welcome = ({handleClickStart}) => {
             <h1 className={'welcome-title'}>ESCOLHA O MELHOR CLIPE DO CANAL ESKIMOZIN</h1> :
             <h1 className={'welcome-title-apuration'}><ApurationInfo/></h1>
           }
-          <div data-aos={!existsSaveInLocalStorage() ? "fade-up" : "no-animate"} style={!existsSaveInLocalStorage() ? {marginTop: '0.5rem'} : {width: 'min(calc(100% - 2rem), 500px)', margin: '0 auto'}} data-aos-delay={3000} data-aos-duration={1500}>
+          <div data-aos={!existsSaveInLocalStorage() ? "fade" : "no-animate"}
+               style={!existsSaveInLocalStorage() ? {marginTop: '0.5rem'} : {
+                 width: 'min(calc(100% - 2rem), 500px)',
+                 margin: '0 auto'
+               }}
+               data-aos-delay={3000}
+               data-aos-duration={1500}>
             <Button classname={'start row-reverse'} onclick={() => {
               handleClickStart(true)
             }}>

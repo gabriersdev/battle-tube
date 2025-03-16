@@ -71,7 +71,9 @@ class Util {
     const minorWords = ["de", "do", "da", "dos", "das", "e", "em", "com", "por", "a", "o", "as", "os", "um", "uma", "uns", "umas", "para", "no", "na", "nos", "nas"];
 
     return text.toLowerCase().split(" ").map((word, index) => {
-      if (index === 0 || !minorWords.includes(word)) {
+      if (word.includes("KK".toLowerCase())) {
+        return "KKKKKKKKK";
+      } else if (index === 0 || !minorWords.includes(word)) {
         return word.charAt(0).toUpperCase() + word.slice(1);
       }
       return word;

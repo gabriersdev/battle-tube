@@ -6,14 +6,14 @@ const ApurationInfo = () => {
 
   return (
     <div style={{textAlign: 'center', display: 'flex', gap: '0.5rem', flexDirection: 'column'}}>
-      <div data-aos="fade-up" data-aos-delay={500} data-aos-duration={1500}>
+      <div data-aos="fade" data-aos-delay={500} data-aos-duration={500}>
         <p>FORAM <span className={'neon-text'}>{countClipsYear.toLocaleString('pt-br')}</span> CLIPES FEITOS
           EM {selectionYear}</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay={1500} data-aos-duration={1000}>
+      <div data-aos="fade" data-aos-delay={1500} data-aos-duration={500}>
         <p>SELECIONAMOS AQUI APENAS OS <span className={'neon-text'}>64 MELHORES</span></p>
       </div>
-      <div data-aos="fade-up" data-aos-delay={2500} data-aos-duration={1500}>
+      <div data-aos="fade" data-aos-delay={2500} data-aos-duration={500}>
         <p>E VOCÊ TEM <span className={'neon-text'}>A MISSÃO</span> DE ESCOLHER O MELHOR</p>
       </div>
     </div>
