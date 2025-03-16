@@ -103,6 +103,9 @@ const StatisticDialog = () => {
         {show}
       </section>
       <section>
+        <div style={{textAlign: 'left', marginBottom: '1rem'}}>
+          <span>{("0" + (index + 1)).slice(-2).toLocaleString()}/{("0" + groups.length).slice(-2)}</span>
+        </div>
         <div style={{display: 'flex', justifyContent: 'space-between', gap: '0.5rem', flexWrap: 'wrap'}}>
           <Button classname={'icon no-margin'} onclick={() => {
             setIndex(index - 1 >= 0 ? index - 1 : index);
@@ -118,7 +121,8 @@ const StatisticDialog = () => {
             <span>Anterior</span>
           </Button>
           <Button classname={'icon no-margin'} onclick={() => {
-            setIndex(index + 1 <= groups.length - 1 ? index + 1 : index);11
+            setIndex(index + 1 <= groups.length - 1 ? index + 1 : index);
+            11
           }}>
             <span>Próximo</span>
             <span>
