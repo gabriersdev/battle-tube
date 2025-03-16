@@ -6,10 +6,10 @@ import {Main} from './components/main/Main.jsx'
 import Footer from "./components/footer/Footer.jsx";
 import LoadingPage from "./components/loadingPage/LoadingPage.jsx";
 import Welcome from "./components/welcome/Welcome.jsx";
+import Tootip from "./components/tooltip/Tooltip.jsx";
 
 import 'aos/dist/aos.css';
 import './app.css'
-import Tootip from "./components/tooltip/Tooltip.jsx";
 
 function App() {
   const [roundPage, setRoundPage] = useState(1)
@@ -52,10 +52,10 @@ function App() {
         <Welcome handleClickStart={setClickInStarted}/>
         <AnimatePresence mode="wait">
           <motion.div
-            key={0}
+            key={new Date().getTime().toString()}
             initial={{opacity: 0, y: 50}}
             animate={{opacity: 1, y: 0}}
-            exit={{opacity: 0, y: -50}}
+            exit={{opacity: 0, y: 0}}
             transition={{duration: 0.5, ease: "easeOut"}}
             className={"inter"}
             style={{

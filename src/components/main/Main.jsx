@@ -1,8 +1,10 @@
-import {createContext, useEffect, useRef} from "react";
-import Selection from "../selection/Selection.jsx";
-import PropTypes from "prop-types";
 import './main.css'
-import Dialog from "../dialog/Dialog.jsx";
+
+import {createContext, useEffect, useRef} from "react";
+import PropTypes from "prop-types";
+
+import Selection from "../selection/Selection.jsx";
+import StatisticDialog from "../statisticDialog/statisticDialog.jsx";
 
 const Theme = createContext({})
 
@@ -14,7 +16,7 @@ const Main = ({functions}) => {
 
   return (
     <Theme.Provider value={{dialog}}>
-      <Dialog/>
+      <StatisticDialog/>
       <main className="container-main">
         <h1 className={"none"}>ESCOLHA UM CLIPE</h1>
         <div>

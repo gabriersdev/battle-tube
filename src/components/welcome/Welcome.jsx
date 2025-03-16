@@ -17,10 +17,10 @@ const Welcome = ({handleClickStart}) => {
   return (
     <AnimatePresence mode="wait">
       <motion.section
-        key={0}
+        key={new Date().getTime().toString()}
         initial={{opacity: 0, y: 50}}
         animate={{opacity: 1, y: 0}}
-        exit={{opacity: 0, y: -50}}
+        exit={{opacity: 0, y: 0}}
         transition={{duration: 0.5, ease: "easeInOut"}}
         className={'welcome'}
       >
