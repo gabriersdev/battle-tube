@@ -8,6 +8,11 @@
   cursor: pointer;
   font-size: 24px;
   font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 
   &.no-margin {
     margin: 0;
@@ -22,15 +27,6 @@
     background-color: #6D28D9;
     color: #C6ADFF;
     cursor: not-allowed;
-  }
-
-  &.start,
-  &.restart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
   }
 
   &.row-reverse {

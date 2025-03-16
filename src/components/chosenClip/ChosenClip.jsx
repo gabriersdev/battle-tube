@@ -48,8 +48,7 @@ const ChosenClip = ({data}) => {
               <span>OUTRAS ESTATÍSTICAS</span>
               <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                     fill="#C6ADFF"
-                     style={{paddingTop: 0, margin: 0, paddingLeft: '0.35rem'}}>
+                     fill="#C6ADFF">
                   <path
                     d="M160-160v-320h160v320H160Zm240 0v-640h160v640H400Zm240 0v-440h160v440H640Z"/>
                 </svg>

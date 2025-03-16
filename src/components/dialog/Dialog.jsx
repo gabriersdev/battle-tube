@@ -3,6 +3,7 @@ import data from '../../data/scrapping.js';
 
 import './dialog.css'
 import Util from "../../util/Util.js";
+import Button from "../button/Button.jsx";
 
 const Dialog = () => {
   let {currentYear, totalClips, monthMoreClips, topClippers, totalViews, topClips, scrappingInit, scrappingFinish} = {
@@ -16,9 +17,13 @@ const Dialog = () => {
 
   return (
     <dialog className={"modal-dialog-analytics"} ref={dialog}>
-      <hgroup style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem'}}>
+      <hgroup
+        style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem'}}>
         <h2 style={{textWrap: 'balance'}}>Estatísticas de Clipes do Canal</h2>
-        <button className={'btn-close-modal'} style={{margin: 0, padding: '0.25rem 0.5rem', border: '1px solid #C6ADFF50', borderRadius: '5px'}} onClick={(e) => e.target.closest('dialog').close()}>X</button>
+        <button className={'btn-close-modal'}
+                style={{margin: 0, padding: '0.25rem 0.5rem', border: '1px solid #C6ADFF50', borderRadius: '5px'}}
+                onClick={(e) => e.target.closest('dialog').close()}>X
+        </button>
       </hgroup>
       <section style={{textAlign: 'left'}}>
         <div className={'modal-group'}>
@@ -42,6 +47,33 @@ const Dialog = () => {
             <span><b className="text-emphasis">{totalClips.toLocaleString('pt-br') || '...'} CLIPES</b></span>
             <span>FEITOS NO ANO.</span>
           </p>
+
+          <div style={{display: 'flex', justifyContent: 'space-between', gap: '0.5rem', marginTop: '1.5rem'}}>
+            <Button classname={'icon'} onclick={() => {
+            }}>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                   className="bi bi-arrow-left"
+                   viewBox="0 0 16 16">
+                <path fillRule="evenodd"
+                      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>
+            </span>
+              <span>Anterior</span>
+            </Button>
+            <Button classname={'icon'} onclick={() => {
+            }}>
+              <span>Próximo</span>
+              <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                   className="bi bi-arrow-right"
+                   viewBox="0 0 16 16">
+                <path fillRule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg>
+            </span>
+            </Button>
+          </div>
         </div>
 
         <div className={'modal-group'}>
@@ -84,7 +116,8 @@ const Dialog = () => {
                 return (
                   <li key={i}>
                     <a href={clip.url || '#'} target={"_blank"}>
-                      <b className={"text-emphasis"} title={Util.capitalizeText(clip.title || "Título não retornado")}>{clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}</b>
+                      <b className={"text-emphasis"}
+                         title={Util.capitalizeText(clip.title || "Título não retornado")}>{clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}</b>
                       <span>,{" "}</span>
                       <span><b className={"text-emphasis"}>{clip.view_count.toLocaleString('pt-br') || 'VÁRIAS'}</b> VISUALIZAÇÕES</span>
                     </a>
