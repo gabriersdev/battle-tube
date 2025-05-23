@@ -14,14 +14,21 @@
   color: #F6F6F6;
   border-radius: 5px;
 
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: calc(100vh - 10rem);
+  }
+
   &::backdrop {
     background: #000;
     opacity: 0.75;
   }
 
   .modal-group {
-    padding: 2rem 0;
-    border-bottom: 1px solid #C6ADFF25;
+    padding: 2rem 0 1.5rem 0;
   }
 
   .modal-group-title {
@@ -46,7 +53,7 @@
 
   .btn-close-modal {
     color: #6D28D9;
-    margin-top: 1rem;
+    margin-top: 0.25rem;
   }
 
   .text-emphasis {
