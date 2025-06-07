@@ -5,6 +5,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Roobert';
+  font-style: normal;
+  src: url("./fonts/Roobert.ttf");
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Roobert.ttf");
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/RoobertMedium.otf");
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/RoobertSemiBold.otf");
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/RoobertBold.otf");
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-style: normal;
+  font-weight: 800;
+  src: url("./fonts/RoobertHeavy.otf");
+}
+
 body {
   background-color: #121212;
   color: #F6F6F6;
@@ -16,9 +57,11 @@ body {
 }
 
 body * {
-  font-family: "Chakra Petch", sans-serif;
+  font-family: "Roobert", "Chakra Petch", sans-serif;
+  text-transform: uppercase;
 }
 
 .inter {
   font-family: "Inter Tight", "Chakra Petch", sans-serif;
+  text-transform: initial;
 }

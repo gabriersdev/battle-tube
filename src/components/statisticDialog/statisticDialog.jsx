@@ -12,7 +12,7 @@ const StatisticDialog = () => {
     topClippers: data.topClippers.toSorted((a, b) => a[1] < b[1]),
     topClips: data.topClips.toSorted((a, b) => a[1] < b[1])
   };
-
+  
   const [index, setIndex] = useState(0);
   const [styleButtons, setStyleButtons] = useState({});
   const [groups] = useState([
@@ -23,7 +23,7 @@ const StatisticDialog = () => {
           {monthMoreClips.map((month, i) => {
             return (<li key={i}>
               <b className="text-emphasis">{month[0] || '...'}</b>
-              <b>,{" "}</b>
+              <b><span className={"inter"}>,</span>{" "}</b>
               <b className="text-emphasis">{month[1].toLocaleString('pt-br') || 'VÁRIOS'}</b>
               <span>{" "}CLIPES</span>
             </li>)
@@ -73,8 +73,9 @@ const StatisticDialog = () => {
           {topClips.map((clip, i) => {
             return (<li key={i}>
               <a href={clip.url || '#'} target={"_blank"}>
-                <b className={"text-emphasis"}
-                   title={Util.capitalizeText(clip.title || "Título não retornado")}>{clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}</b>
+                <b className={"text-emphasis"} data-tooltip={Util.capitalizeText(clip.title || "Título não retornado")} title={Util.capitalizeText(clip.title || "Título não retornado")}>
+                  {clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}
+                </b>
                 <span>,{" "}</span>
                 <span><b className={"text-emphasis"}>{clip.view_count.toLocaleString('pt-br') || 'VÁRIAS'}</b> VISUALIZAÇÕES</span>
               </a>
@@ -84,27 +85,28 @@ const StatisticDialog = () => {
       </div>
     )
   ]);
+  
   const [show, setShow] = useState((
     <AnimationPresence date={new Date()}>
       {groups[index]}
     </AnimationPresence>
   ));
-
+  
   useEffect(() => {
     setShow((
       <AnimationPresence date={new Date()}>
         {groups[index]}
       </AnimationPresence>
     ))
-
+    
     if (index === groups.length - 1) {
       setStyleButtons([
         {display: 'flex', flexDirection: 'column', alignItems: 'stretch'},
-        {display: 'none'}
+        {opacity: '0.5', pointerEvents: "none", cursor: "not-allowed"}
       ]);
     } else if (index === 0) {
       setStyleButtons([
-        {display: 'none'},
+        {opacity: '0.5', pointerEvents: "none", cursor: "not-allowed"},
         {display: 'flex', flexDirection: 'column', alignItems: 'stretch'}
       ]);
     } else {
@@ -114,7 +116,7 @@ const StatisticDialog = () => {
       ]);
     }
   }, [groups, index, setIndex])
-
+  
   return (
     <Dialog>
       <section style={{textAlign: 'left', flexGrow: 2}}>
@@ -126,7 +128,8 @@ const StatisticDialog = () => {
         </div>
         <div style={{display: 'flex', gap: '0.5rem', flexDirection: 'column'}}>
           <div style={{...styleButtons[0]}}>
-            <Button classname={'icon no-margin'} onclick={() => {
+            <Button classname={'icon no-margin'} onclick={(e) => {
+              if (e.target.style.pointerEvents === "none") return;
               setIndex(index - 1 >= 0 ? index - 1 : index);
             }}>
             <span>
@@ -141,9 +144,9 @@ const StatisticDialog = () => {
             </Button>
           </div>
           <div style={{...styleButtons[1]}}>
-            <Button classname={'icon no-margin'} onclick={() => {
+            <Button classname={'icon no-margin'} onclick={(e) => {
+              if (e.target.style.pointerEvents === "none") return;
               setIndex(index + 1 <= groups.length - 1 ? index + 1 : index);
-              11
             }}>
               <span>Próximo</span>
               <span>
@@ -157,7 +160,7 @@ const StatisticDialog = () => {
             </Button>
           </div>
         </div>
-
+        
         <div className={'modal-group'}>
           <p style={{color: '#FFFFFF50', textAlign: 'center', textWrap: 'balance'}}>
             Dados obtidos entre entre os dias

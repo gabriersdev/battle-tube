@@ -6,9 +6,9 @@ const countClipsYear = data.totalClips || 'MUITOS';
 const selectionYear = 2024
 
 const pharses = [
-  <p key={1}>FORAM <span className="neon-text">{countClipsYear.toLocaleString('pt-br')}</span> CLIPES FEITOS EM {selectionYear}</p>,
-  <p key={3}>SELECIONAMOS AQUI APENAS OS <span className="neon-text">64 MELHORES</span></p>,
-  <p key={2}>E VOCÊ TEM <span className="neon-text">A MISSÃO</span> DE ESCOLHER <span className="neon-text">O MELHOR</span></p>,
+  <p key={1}>Foram <span className="neon-text">{countClipsYear.toLocaleString('pt-br')}</span> clipes feitos em {selectionYear}</p>,
+  <p key={3}>Selecionamos aqui apenas os <span className="neon-text">64 melhores</span></p>,
+  <p key={2}>E você tem <span className="neon-text">a missão</span> de escolher <span className="neon-text">o melhor</span></p>,
 ]
 
 const ApurationInfo = () => {

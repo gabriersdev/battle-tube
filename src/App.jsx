@@ -19,26 +19,26 @@ function App() {
   const [dataExport, setDataExport] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [clickInStarted, setClickInStarted] = useState(false)
-
+  
   const pushDataExport = (data) => {
     setDataExport([...dataExport, data])
   }
-
+  
   useEffect(() => {
     AOS.init();
     setTimeout(() => {
       setIsLoading(false)
     }, localStorage && localStorage.getItem('battle-tube-app') ? 0 : 2000)
-
+    
     if (typeof localStorage !== 'undefined') localStorage.setItem('battle-tube-app', JSON.stringify({id: new Date().getTime() * (Math.random() * 10)}))
   }, []);
-
+  
   useEffect(() => {
     document.querySelectorAll('a').forEach(link => {
       if (link.getAttribute('rel') !== 'noopener noreferrer') link.setAttribute('rel', 'noopener noreferrer')
     })
   });
-
+  
   if (isLoading) {
     return (
       <div className={"app"}>
@@ -87,8 +87,7 @@ function App() {
           className={'app'}
         >
           <Tootip/>
-          <Main
-            functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
+          <Main functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
           <Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>
         </motion.div>
       </AnimatePresence>

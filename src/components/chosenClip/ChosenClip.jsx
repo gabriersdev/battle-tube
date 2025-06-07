@@ -10,14 +10,13 @@ import {Theme} from "../main/Main.jsx";
 
 const ChosenClip = ({data}) => {
   const {dialog} = useContext(Theme)
-
+  
   useEffect(() => {
     // TODO - ocultar de forma mais eficiente
     document.querySelector('footer').style.display = 'none';
   }, [])
-
-  return (
-    <AnimatePresence mode="wait">
+  
+  return (<AnimatePresence mode="wait">
       <motion.div
         key={0}
         initial={{opacity: 0, y: 50}}
@@ -37,20 +36,19 @@ const ChosenClip = ({data}) => {
                 className={'chosen-username unsecure-text neon-text'}>{data.username || 'Username não retornado'}</span>
             </p>
             <p className={'chosen-paragraph unsecure-text'}>
-              <span>“{data.title ? data.title.trim() : 'Título não retornado'}”</span>
+              <span className={"inter"} style={{display: "inline-block"}}>{"\""}</span>
+              <span>{data.title ? data.title.trim() : 'Título não retornado'}</span>
+              <span className={"inter"} style={{display: "inline-block"}}>{"\""}</span>
             </p>
           </div>
           <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
             <Button onclick={() => {
-              if (dialog.current) dialog.current.showModal();
-              else document.querySelector('.modal-dialog-analytics').showModal();
+              if (dialog.current) dialog.current.showModal(); else document.querySelector('.modal-dialog-analytics').showModal();
             }} classname={'link-external no-margin'}>
               <span>OUTRAS ESTATÍSTICAS</span>
               <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
-                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                     fill="#C6ADFF">
-                  <path
-                    d="M160-160v-320h160v320H160Zm240 0v-640h160v640H400Zm240 0v-440h160v440H640Z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#C6ADFF">
+                  <path d="M160-160v-320h160v320H160Zm240 0v-640h160v640H400Zm240 0v-440h160v440H640Z"/>
                 </svg>
               </span>
             </Button>
@@ -64,12 +62,9 @@ const ChosenClip = ({data}) => {
               window.location.reload()
             }} classname={'restart no-margin'}>
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                   className="bi bi-arrow-left"
-                   viewBox="0 0 16 16">
-                <path fillRule="evenodd"
-                      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-                </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>
             </span>
               <span>RECOMEÇAR</span>
             </Button>
@@ -77,7 +72,7 @@ const ChosenClip = ({data}) => {
           <div className={'chosen-clip-info'}>
             <p className={'chosen-paragraph'}>
               <span>Feito com</span>&nbsp;
-              <span>❤️</span>&nbsp;
+              <span>💖</span>&nbsp;
               <span>pelo Gabriel</span>
             </p>
           </div>
@@ -87,15 +82,12 @@ const ChosenClip = ({data}) => {
         </div>
         <Confetti/>
       </motion.div>
-    </AnimatePresence>
-  )
+    </AnimatePresence>)
 }
 
 ChosenClip.propTypes = {
   data: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired, username: PropTypes.string.isRequired, id: PropTypes.string.isRequired
   }).isRequired
 }
 

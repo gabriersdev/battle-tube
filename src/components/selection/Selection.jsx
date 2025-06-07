@@ -13,13 +13,13 @@ const initialClips = Util.shuffle(clipsData).map(clip => {
 
 const Selection = ({functions}) => {
   const {setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport} = functions;
-
+  
   const [clips, setClips] = useState(initialClips); // Lista de clipes na rodada atual
   const [currentPairIndex, setCurrentPairIndex] = useState(0); // Par atual sendo exibido
   const [round, setRound] = useState(1); // Número da rodada
   const [winners, setWinners] = useState([]); // Vencedores da rodada atual
   const [logs, setLogs] = useState([]);
-
+  
   useEffect(() => {
     if (initialClips === undefined || initialClips.length === 0 || !Array.isArray(initialClips) || initialClips.length % 2 !== 0 || initialClips.length !== 64) {
       console.error('Erro: A lista de clipes não é válida!', initialClips, typeof initialClips);
@@ -29,7 +29,7 @@ const Selection = ({functions}) => {
         </div>
       )
     }
-
+    
     // Obter os dados do localStorage, se existirem
     if (typeof localStorage !== 'undefined') {
       const clips = JSON.parse(localStorage.getItem('clips'));
@@ -37,7 +37,7 @@ const Selection = ({functions}) => {
       const round = JSON.parse(localStorage.getItem('round'));
       const winners = JSON.parse(localStorage.getItem('winners'));
       const logs = JSON.parse(localStorage.getItem('logs'));
-
+      
       if (logs && logs.length > 0 && Array.isArray(logs)) {
         try {
           setLogs(logs);
@@ -48,7 +48,7 @@ const Selection = ({functions}) => {
       } else {
         setLogs([])
       }
-
+      
       if (clips && clips.length > 0 && Array.isArray(clips) && Util.includesObjects(clips, initialClips)) {
         try {
           setClips(clips);
@@ -56,7 +56,7 @@ const Selection = ({functions}) => {
           console.error('Erro ao carregar os clips do localStorage:', e)
         }
       }
-
+      
       if (currentPairIndex !== null && round !== null && winners) {
         try {
           setCurrentPairIndex(currentPairIndex);
@@ -72,14 +72,14 @@ const Selection = ({functions}) => {
       }
     }
   }, [])
-
+  
   useEffect(() => {
     // Atualizar os dados do projeto, no footer
     setRoundPage(round);
     setTotalRoundPages(Math.log2(initialClips.length));
     setSelectionPage(currentPairIndex + 1);
     setTotalSelectionPages(clips.length / 2);
-
+    
     // TODO - fazer isso de forma mais eficiente
     const btnClearReload = document.querySelector(['[data-action="clear-and-reload"]'])
     if (btnClearReload && round === 1 && currentPairIndex === 0) {
@@ -87,14 +87,14 @@ const Selection = ({functions}) => {
     } else if (btnClearReload) {
       btnClearReload.style.display = 'flex';
     }
-
+    
   }, [round, currentPairIndex, clips, setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages]);
-
+  
   const handleSelection = (winnerIndex) => {
     // Adicionar o vencedor ao array de vencedores
     const winner = clips[currentPairIndex * 2 + winnerIndex];
     setWinners((prev) => [...prev, winner]);
-
+    
     const data = {
       datetime: new Date().toISOString(),
       selection: `${currentPairIndex + 1}/${clips.length / 2}`,
@@ -103,13 +103,13 @@ const Selection = ({functions}) => {
       username: winner.creator_name,
       id: winner.id,
     }
-
+    
     // Atualizar os dados do projeto, para exportação
     pushDataExport(data);
-
+    
     // Atualizar os logs
     setLogs((prev) => [...prev, {...data, context: 'DEBUG'}]);
-
+    
     // Verificar se foi o último par da rodada
     if (currentPairIndex === Math.floor(clips.length / 2) - 1) {
       // Atualizar os clipes para a próxima rodada
@@ -121,7 +121,7 @@ const Selection = ({functions}) => {
       // Avançar para o próximo par
       setCurrentPairIndex(currentPairIndex + 1);
     }
-
+    
     // Persistir os dados no localStorage
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem('clips', JSON.stringify(clips));
@@ -131,7 +131,7 @@ const Selection = ({functions}) => {
       localStorage.setItem('logs', JSON.stringify(logs));
     }
   };
-
+  
   // Verificar se restou apenas um clipe
   if (clips.length === 1) {
     const clipData = {...clips[0], username: clips[0].creator_name};
@@ -142,13 +142,13 @@ const Selection = ({functions}) => {
       </section>
     )
   }
-
+  
   // Obter os dois clipes do par atual
   const currentPair = [
     clips[currentPairIndex * 2],
     clips[currentPairIndex * 2 + 1],
   ];
-
+  
   const getClipData = (index) => {
     return {
       title: currentPair[index] ? currentPair[index].title : 'Sem título',
@@ -156,7 +156,7 @@ const Selection = ({functions}) => {
       id: currentPair[index] ? currentPair[index].id : '#',
     };
   }
-
+  
   return (
     <AnimatePresence mode="wait">
       <motion.div

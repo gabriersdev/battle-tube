@@ -23,14 +23,14 @@ const Footer = ({variables}) => {
   return (
     <footer className="footer">
       <div className={"footer-left"}>
-        <button onClick={() => exportData()} title={"Exportar Logs"}  className={"footer-btn-export"}>
+        <button onClick={() => exportData()} data-tooltip={"Exportar Logs"} title={"Exportar Logs"}  className={"footer-btn-export"}>
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#C6ADFF">
               <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
             </svg>
           </span>
         </button>
-        <button data-action={"clear-and-reload"} title={"Recomeçar"} onClick={() => {
+        <button data-action={"clear-and-reload"} data-tooltip={"Recomeçar"} title={"Recomeçar"} onClick={() => {
           if (confirm('Tem certeza que deseja reiniciar? Todas as escolhas feitas até aqui serão perdidas para sempre.')) {
             if (typeof localStorage !== 'undefined') {
               const allStorage = Object.assign({}, localStorage)
@@ -55,7 +55,7 @@ const Footer = ({variables}) => {
           <p>RODADA {formatNumber(roundPage)}/{formatNumber(totalRoundPages)} </p>
         </div>
         <div style={{color: '#C6ADFF'}}>
-          <p>SELEÇÃO {formatNumber(selectionPage)}/{formatNumber(totalSelectionPages)}</p>
+          <p><span className={"inter"}>SELEÇÃO</span> {formatNumber(selectionPage)}/{formatNumber(totalSelectionPages)}</p>
         </div>
       </div>
     </footer>
