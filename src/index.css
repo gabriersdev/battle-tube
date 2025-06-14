@@ -8,42 +8,42 @@
 @font-face {
   font-family: 'Roobert';
   font-style: normal;
-  src: url("./fonts/Roobert.ttf");
+  src: url("/fonts/Roobert.ttf");
 }
 
 @font-face {
   font-family: 'Roobert';
   font-style: normal;
   font-weight: 400;
-  src: url("./fonts/Roobert.ttf");
+  src: url("/fonts/Roobert.ttf");
 }
 
 @font-face {
   font-family: 'Roobert';
   font-style: normal;
   font-weight: 500;
-  src: url("./fonts/RoobertMedium.otf");
+  src: url("/fonts/RoobertMedium.otf");
 }
 
 @font-face {
   font-family: 'Roobert';
   font-style: normal;
   font-weight: 600;
-  src: url("./fonts/RoobertSemiBold.otf");
+  src: url("/fonts/RoobertSemiBold.otf");
 }
 
 @font-face {
   font-family: 'Roobert';
   font-style: normal;
   font-weight: 700;
-  src: url("./fonts/RoobertBold.otf");
+  src: url("/fonts/RoobertBold.otf");
 }
 
 @font-face {
   font-family: 'Roobert';
   font-style: normal;
   font-weight: 800;
-  src: url("./fonts/RoobertHeavy.otf");
+  src: url("/fonts/RoobertHeavy.otf");
 }
 
 body {
