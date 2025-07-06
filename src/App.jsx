@@ -88,7 +88,7 @@ function App() {
         >
           <Tootip/>
           <Main functions={{setRoundPage, setTotalRoundPages, setSelectionPage, setTotalSelectionPages, pushDataExport}}/>
-          <Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>
+          {/*<Footer variables={[roundPage, totalRoundPages, selectionPage, totalSelectionPages, dataExport]}/>*/}
         </motion.div>
       </AnimatePresence>
     )

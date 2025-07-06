@@ -1,0 +1,31 @@
+.commemoration-component {
+  text-align: center;
+  min-height: calc(100vh - (2 * 100px));
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+  border-radius: 10px;
+
+  .ex {
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .btn-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  *{
+    text-wrap: balance;
+  }
+}
+
+.commemoration-component h1 {
+  margin: 25vh 0;
+}
