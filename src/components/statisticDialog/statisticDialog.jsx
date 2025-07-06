@@ -74,9 +74,8 @@ const StatisticDialog = () => {
             return (<li key={i}>
               <a href={clip.url || '#'} target={"_blank"}>
                 <b className={"text-emphasis"} data-tooltip={Util.capitalizeText(clip.title || "Título não retornado")} title={Util.capitalizeText(clip.title || "Título não retornado")}>
-                  {clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}
+                  {clip.title.length > 20 ? (clip.title.slice(0, 20) + '...') : clip.title || 'Título não retornado'}{" "}
                 </b>
-                <span>,{" "}</span>
                 <span><b className={"text-emphasis"}>{clip.view_count.toLocaleString('pt-br') || 'VÁRIAS'}</b> VISUALIZAÇÕES</span>
               </a>
             </li>)
